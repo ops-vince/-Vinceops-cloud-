@@ -1,6 +1,6 @@
 # VinceOps Cloud Infrastructure
 
-> Production-grade AWS cloud infrastructure for a fintech startup —
+> Production-grade AWS cloud infrastructure for a fintech startup -
 > designed, built, and documented by a sole cloud security engineer.
 
 ## The engineering challenge
