@@ -1,11 +1,3 @@
-vinceops-cloud/
-├── README.md         ← master file above
-├── month-1/          ← create now, fill as you build
-├── month-2/
-├── month-3/
-├── month-4/
-└── month-5/
-
 chore: initialise VinceOps Cloud repository structure
 
 Sets up the five-phase project scaffold for a production-grade
