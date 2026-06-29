@@ -26,4 +26,4 @@ Prometheus · Grafana · Trivy · OWASP ZAP · Linux
 
 ## Engineer
 Vince Ifeanyi — Cloud Security + DevOps Engineer
-[Linkedln](www.linkedin.com/in/vinceops)
+[LinkedIn](https://www.linkedin.com/in/vinceops)
