@@ -1,3 +1,5 @@
-Sets up the five-phase project scaffold for a production-grade
-AWS cloud infrastructure build. Documentation will be added
-month by month as each infrastructure layer is completed.
+feat: month 3 — Terraform IaC modules + GitHub Actions CI/CD pipeline
+
+Replaces all manual AWS console deployments with version-controlled
+Terraform modules. Self-hosted EC2 runner configured. Remote state
+in S3 with DynamoDB locking. Full pipeline diagram documented.
