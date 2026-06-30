@@ -1,5 +1,5 @@
-chore: initialise VinceOps Cloud repository structure
+feat: month 1 - multi-account AWS org, IAM architecture, VPC foundation
 
-Sets up the five-phase project scaffold for a production-grade
-AWS cloud infrastructure build. Documentation will be added
-month by month as each infrastructure layer is completed.
+Implements least-privilege IAM structure across dev/staging/production
+accounts. VPC configured with public/private subnet isolation.
+Architecture diagram and full decision log included.
