@@ -1,5 +1,3 @@
-feat: month 1 - multi-account AWS org, IAM architecture, VPC foundation
+### Root User Protection 
 
-Implements least-privilege IAM structure across dev/staging/production
-accounts. VPC configured with public/private subnet isolation.
-Architecture diagram and full decision log included.
+Root MFA was enabled for the Management Account and all member accounts. Root access keys were not created. Root users are reserved for account recovery and emergency account-level tasks only
