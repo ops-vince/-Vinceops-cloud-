@@ -1,5 +1,0 @@
-feat: month 2 - S3 website, EC2+RDS+ELB WordPress, ISO 27001 policy
-
-Deploys static website with HTTPS and Route 53 DNS. WordPress
-production setup with RDS backend and load balancer for HA.
-Cybersecurity policy document aligned to ISO/IEC 27001 included.
