@@ -52,15 +52,15 @@ The objective was to establish separate AWS account boundaries and a centralized
 | [IAM Users and Groups](./iam-architecture/users-and-groups.md) | Workforce roles, responsibilities, and account assignments |
 | [Architecture and Security Decisions](./decisions.md) | Technical decisions, trade-offs, consequences, and review triggers |
 | [Sanitized AWS Console Evidence](./screenshots/Read.md) | Selected AWS console evidence supporting the implementation |
-| [Full Architecture Diagram](./iam-architecture/diagrams/vinceops-iam-architecture.png) | Visual overview of the implemented AWS Organizations and IAM architecture |
+| [Full Architecture Diagram](./iam-architecture/Diagram/AWS-Organisation%20account.png) | Visual overview of the implemented AWS Organizations and IAM architecture |
 
 ## Architecture Diagram
 
 The diagram below represents the AWS Organizations and IAM Identity Center architecture implemented during this milestone.
 
-[View the full-size architecture diagram](./iam-architecture/diagrams/vinceops-iam-architecture.png)
+[View the full-size architecture diagram](./iam-architecture/Diagram/AWS-Organisation%20account.png)
 
-![VinceOps Cloud AWS IAM Architecture](./iam-architecture/diagrams/vinceops-iam-architecture.png)
+[![VinceOps Cloud AWS IAM Architecture](./iam-architecture/Diagram/AWS-Organisation%20account.png)](./iam-architecture/Diagram/AWS-Organisation%20account.png)
 
 ## AWS Account Architecture
 
@@ -262,5 +262,6 @@ The resulting architecture provides:
 [AWS Organization](./aws-orginasation/README.md) ·
 [IAM Policies](./iam-architecture/policies.md) ·
 [IAM Groups](./iam-architecture/users-and-groups.md) ·
+[Architecture Diagram](./iam-architecture/Diagram/AWS-Organisation%20account.png) ·
 [Decisions](./decisions.md) ·
 [Evidence](./screenshots/Read.md)
