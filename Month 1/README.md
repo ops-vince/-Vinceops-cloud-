@@ -125,14 +125,3 @@ All public screenshots must:
 - keep relevant account, group, and permission-set names visible.
 
 No implementation claim should be stronger than the available AWS configuration and sanitized evidence support.
-
-## Next Technical Phase
-
-The next technical phase is the AWS VPC foundation, including:
-
-- public and private subnet separation;
-- route-table design;
-- controlled internet access;
-- environment-specific network boundaries;
-- network architecture documentation;
-- validation evidence.
