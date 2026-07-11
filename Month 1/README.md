@@ -81,10 +81,11 @@ Service-specific permissions should be introduced only when the required AWS ser
 
 ## Documentation Structure
 
-- [AWS Organization Documentation](aws-organisation/)
-- [IAM Architecture Documentation](iam-architecture/)
+- [AWS Organization Documentation](aws-organisation/README.md)
+- [IAM Policies and Permission Sets](iam-architecture/policies.md)
+- [IAM Users and Groups](iam-architecture/users-and-groups.md)
 - [Architecture and Security Decisions](decisions.md)
-- [Sanitized AWS Console Evidence](screenshots/)
+- [Sanitized AWS Console Evidence](screenshots/Read.md)
 
 ## Scope Boundary
 
