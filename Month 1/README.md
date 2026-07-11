@@ -5,7 +5,6 @@
 > **AWS Organizations and IAM Scope:** Complete  
 > **Completed Implementation:** Parts 1–4  
 > **End-User Access-Portal Validation:** Not included in the current scope  
-> **VPC Foundation:** Pending  
 
 ## Overview
 
