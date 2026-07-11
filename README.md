@@ -14,8 +14,8 @@ is documented here with the reasoning behind it.
 ## What this system includes
 | Phase | Infrastructure layer | Status |
 |-------|---------------------|--------|
-| Month 1 | AWS org · IAM architecture · VPC |🟢In progress |
-| Month 2 | EC2 · RDS · ELB · S3 · Security policy |⚪ Upcoming |
+| Month 1 | AWS org · IAM architecture · VPC |🟢 Finished |
+| Month 2 | EC2 · RDS · ELB · S3 · Security policy |🟢in progress |
 | Month 3 | Terraform IaC · GitHub Actions CI/CD |⚪ Upcoming |
 | Month 4 | Docker · Kubernetes EKS · Container security |⚪ Upcoming |
 | Month 5 | Prometheus · Grafana · DevSecOps · Capstone |⚪ Upcoming |
