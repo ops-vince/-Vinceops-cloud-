@@ -1,56 +1,139 @@
-# IAM Permission-Set Architecture
+# Month 1: AWS Multi-Account and IAM Foundation
+
+> **Implementation Platform:** Amazon Web Services  
+> **Documentation Platform:** GitHub  
+> **AWS Organizations and IAM Scope:** Complete  
+> **Completed Implementation:** Parts 1–4  
+> **End-User Access-Portal Validation:** Not included in the current scope  
+> **VPC Foundation:** Pending  
 
 ## Overview
 
-This document describes the AWS IAM Identity Center permission sets implemented for the VinceOps Cloud multi-account environment.
+This repository documents the AWS multi-account and IAM foundation implemented for VinceOps Cloud.
 
-The permission sets were created directly in AWS and define the level of access available to approved workforce groups. They do not grant access independently; access becomes effective only when a permission set is assigned to a group within a specific AWS account.
+The infrastructure was configured directly within Amazon Web Services. GitHub is used only to organize and present the architecture documentation, implementation decisions, diagrams, and sanitized AWS console evidence.
 
-## Implemented Permission Sets
+The implementation establishes separate AWS environments and a centralized workforce access model before the introduction of application workloads, networking, infrastructure as code, CI/CD pipelines, containers, or monitoring services.
 
-| Permission Set | Intended Role | Account Scope | Access Approach |
-|---|---|---|---|
-| `ps-vinceops-dev-devbaseline` | Developers | Development | Baseline visibility for development activities |
-| `ps-vinceops-devnonprod-baseline` | DevOps | Development and Staging | Non-production operational visibility |
-| `ps-vinceops-security-audit` | Security Auditors | Development and Staging | Security and audit-focused visibility |
-| `ps-vinceops-readonly` | ReadOnly users | Development and Staging | Non-modifying resource visibility |
-| `ps-vinceops-idgovernance-mgt` | Cloud Administrators | Management | AWS Organizations and IAM Identity Center governance |
+## Business Context
 
-## Design Approach
+VinceOps Cloud is a simulated fintech cloud environment designed to demonstrate production-minded AWS architecture, environment isolation, centralized workforce identity, and controlled account access.
 
-Permission sets were defined before account assignments were created.
+The objective of this phase was to establish the AWS organization and IAM foundation before application and network resources are introduced.
 
-The effective access model therefore contains three elements:
+## Implemented Scope
 
-1. a workforce group;
-2. a permission set;
-3. a target AWS account.
+The following controls were implemented in AWS:
 
-Creating a permission set alone does not provide access to an AWS account.
+- An AWS Organization containing Management, Development, Staging, and Production accounts
+- Separation of governance activities from workload environments
+- AWS IAM Identity Center as the centralized workforce identity service
+- Five role-based workforce groups
+- Five permission-set baselines
+- Management-account identity-governance access
+- Development account assignments for approved workforce groups
+- Staging account assignments for approved non-production roles
+- No direct standing IAM Identity Center assignments to Production
 
-## Conservative Permission Baseline
+## Implementation Phases
 
-Developer and DevOps permissions currently use conservative visibility-focused baselines.
+| Part | Implementation Area | Status |
+|---|---|---|
+| Part 1 | AWS Organization and account separation | Complete |
+| Part 2 | IAM Identity Center and workforce groups | Complete |
+| Part 3 | Permission-set baselines | Complete |
+| Part 4 | Account-specific access assignments | Complete |
+| Part 5 | MFA test identities and access-portal validation | Excluded from current scope |
 
-Broad write access was intentionally deferred because the environment does not yet contain application workloads, VPC resources, Terraform automation, CI/CD pipelines, databases, containers, or monitoring services.
+## AWS Account Model
 
-The current permission sets are therefore initial baselines and are not represented as final resource-level least-privilege policies.
+| Account | Primary Purpose | Current Workforce Access |
+|---|---|---|
+| Management | AWS Organizations, IAM Identity Center, billing, and governance | Cloud Administrators |
+| Development | Application development and early testing | Developers, DevOps, Security Auditors, and ReadOnly |
+| Staging | Pre-production validation and release testing | DevOps, Security Auditors, and ReadOnly |
+| Production | Future customer-facing workloads | No direct standing IAM Identity Center assignment |
 
-## Provisioning Status
+## Production Access Statement
 
-All five permission sets were successfully provisioned through AWS IAM Identity Center.
+Production has no direct standing IAM Identity Center user or group assignments within the documented access model.
 
-Service-specific and resource-specific permissions will be introduced only when the relevant AWS workloads and operational requirements are known.
+This statement applies specifically to IAM Identity Center assignments. It is not represented as proof that every possible Management-to-Production or cross-account access path has been removed.
 
-## Related Evidence
+The default `OrganizationAccountAccessRole` and any future cross-account role relationships require separate review before a broader Production-isolation claim can be made.
 
-See the selected sanitized AWS console evidence:
+## Permission Strategy
 
-- [Permission-set evidence](../screenshots/permission%20set%20correct.png)
-- [Screenshot evidence guide](../screenshots/Read.md)
+The current Developer and DevOps permission sets use conservative visibility-focused baselines.
+
+Broad write permissions were intentionally not introduced because the project does not yet contain:
+
+- application workloads;
+- VPC resources;
+- Terraform-managed infrastructure;
+- CI/CD pipelines;
+- container platforms;
+- databases;
+- monitoring services.
+
+The current permission sets are therefore documented as initial baselines rather than final resource-level least-privilege policies.
+
+Service-specific permissions should be introduced only when the required AWS services, actions, resources, and security conditions are known.
+
+## Documentation Structure
+
+- [AWS Organization Documentation](./aws-organisation/)
+- [IAM Policies and Permission Sets](./iam-architecture/policies.md)
+- [IAM Users and Groups](./iam-architecture/users-and-groups.md)
+- [Architecture and Security Decisions](./decisions.md)
+- [Sanitized AWS Console Evidence](./screenshots/Read.md)
 
 ## Scope Boundary
 
-This document records the permission-set architecture only.
+This repository currently documents the AWS Organizations and IAM Identity Center implementation only.
 
-It does not prove that every cross-account role, trust policy, or Production access path has been reviewed.
+The following items are not represented as implemented:
+
+- IAM Identity Center end-user access-portal validation
+- Approved temporary Production elevation
+- Break-glass Production access
+- Service control policies
+- VPC architecture
+- Application workloads
+- Terraform
+- CI/CD pipelines
+- Kubernetes
+- Centralized monitoring and logging
+
+## Current Status
+
+The AWS Organizations and IAM implementation documented in Parts 1–4 is complete.
+
+End-user access-portal testing is not included in the current implementation scope.
+
+If the wider Month 1 plan still includes the VPC foundation, Month 1 remains in progress until the network design is implemented, validated, diagrammed, and documented.
+
+## Evidence Standard
+
+All public screenshots must:
+
+- hide AWS account IDs;
+- hide registered account email addresses;
+- hide IAM Identity Center access-portal URLs;
+- hide personal information;
+- hide temporary passwords and authentication secrets;
+- hide MFA QR codes and recovery information;
+- keep relevant account, group, and permission-set names visible.
+
+No implementation claim should be stronger than the available AWS configuration and sanitized evidence support.
+
+## Next Technical Phase
+
+The next technical phase is the AWS VPC foundation, including:
+
+- public and private subnet separation;
+- route-table design;
+- controlled internet access;
+- environment-specific network boundaries;
+- network architecture documentation;
+- validation evidence.
