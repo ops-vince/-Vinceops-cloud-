@@ -82,7 +82,7 @@ Service-specific permissions should be introduced only when the required AWS ser
 
 ## Documentation Structure
 
-- [AWS Organization Documentation](aws-organisation/README.md)
+- [AWS Organization Documentation](./aws-organisation/README.md)
 - [IAM Policies and Permission Sets](./iam-architecture/policies.md)
 - [IAM Users and Groups](./iam-architecture/users-and-groups.md)
 - [Architecture and Security Decisions](./decisions.md)
