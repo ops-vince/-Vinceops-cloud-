@@ -362,7 +362,6 @@ Security Validation
 
 [← Month 1: AWS Organisation and IAM Foundation](../Month%201/README.md) ·
 [Portfolio Home](../README.md) ·
-[Architecture](./network-web-architecture.md) ·
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·
 [Serverless Bonus](./serverless-bonus.md) ·
