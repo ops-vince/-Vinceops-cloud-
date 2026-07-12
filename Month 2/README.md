@@ -6,10 +6,7 @@
 ![HTTPS](https://img.shields.io/badge/Security-HTTPS-2EA44F)
 ![Status](https://img.shields.io/badge/Status-Completed-2EA44F)
 
-> A secure AWS web deployment built from a custom VPC through EC2, Nginx, DNS, HTTPS, logging and external security validation.
-
-[← Month 1: AWS Organisation and IAM Foundation](../Month%201/README.md) ·
-[Portfolio Home](../README.md)
+> A secure AWS web deployment built from a custom VPC through EC2, Nginx, DNS, HTTPS, network logging and external security validation.
 
 ---
 
@@ -17,7 +14,7 @@
 
 Month 2 continues the VinceOps Cloud infrastructure journey established in Month 1.
 
-After creating the AWS organisation and workforce-access foundation, this phase focused on deploying a secure internet-facing website inside a custom AWS network.
+After creating the AWS organisation and workforce-access foundation, this phase focused on deploying an internet-facing website inside a custom AWS network.
 
 The project covered:
 
@@ -39,7 +36,7 @@ The project covered:
 
 [![VinceOps Month 2 AWS Architecture](./diagrams/network-web-architecture.png)](./diagrams/network-web-architecture.png)
 
-[View the full-size architecture diagram](./diagrams/network-web-architecture.png)
+[Open the full architecture diagram](./diagrams/network-web-architecture.png)
 
 ### Deployment Path
 
@@ -122,8 +119,8 @@ The network included:
 - a public route table;
 - an active internet route;
 - an explicit subnet association;
-- security-group controls;
-- Network ACL association;
+- a security group;
+- a Network ACL association;
 - VPC Flow Logs.
 
 The public route table included:
@@ -132,7 +129,12 @@ The public route table included:
 0.0.0.0/0 → Internet Gateway
 ```
 
-This provided the required internet path for the EC2 web server.
+### Network Evidence
+
+- [Public subnet created](./%20screenshots/01-public-subnet-created.png)
+- [Route-table and subnet association](./%20screenshots/02-route-table-subnet-association.png)
+- [Internet Gateway route](./%20screenshots/03-public-route-to-internet-gateway.png)
+- [VPC Flow Logs active](./%20screenshots/04-vpc-flow-logs-active.png)
 
 ---
 
@@ -150,7 +152,22 @@ Access method: SSH key pair
 Metadata protection: IMDSv2
 ```
 
-The server was accessed remotely through SSH for installation and configuration.
+[View the EC2 instance evidence](./%20screenshots/05-ec2-instance-summary.png)
+
+---
+
+## Secure Server Access
+
+The EC2 instance was administered through key-based SSH authentication.
+
+The server was prepared using:
+
+```bash
+sudo apt update -y
+sudo apt upgrade -y
+```
+
+[View the SSH access evidence](./%20screenshots/06-ssh-access-success.png)
 
 ---
 
@@ -159,7 +176,6 @@ The server was accessed remotely through SSH for installation and configuration.
 Nginx was installed and started on the Ubuntu server:
 
 ```bash
-sudo apt update -y
 sudo apt install nginx -y
 sudo systemctl enable nginx
 sudo systemctl start nginx
@@ -178,6 +194,8 @@ The customized VinceOps website files were deployed to:
 /var/www/html
 ```
 
+[View the Nginx validation evidence](./%20screenshots/07-nginx-active-http-response.png)
+
 ---
 
 ## DNS Configuration
@@ -188,7 +206,9 @@ A DNS A record was configured for:
 vinceops.site
 ```
 
-DNS propagation was checked across multiple global DNS resolvers before completing the HTTPS configuration.
+DNS propagation was checked across multiple public DNS resolvers before completing the HTTPS configuration.
+
+[View the DNS propagation evidence](./%20screenshots/08-dns-propagation-vinceops-site.png)
 
 ---
 
@@ -214,17 +234,23 @@ The certificate was deployed through Nginx using:
 sudo certbot --nginx -d vinceops.site -d www.vinceops.site
 ```
 
-The completed website was successfully accessed through HTTPS.
+### HTTPS Evidence
+
+- [Certbot installation](./%20screenshots/9-certbot-installed.png)
+- [Certificate issued](./%20screenshots/10-certbot-certificate-issued.png)
+- [Root and `www` certificate coverage](./%20screenshots/11-certificate-expanded-root-and-www.png)
+- [Certificate details](./%20screenshots/12-https-certificate-detail.png)
+- [HTTPS website deployment](./%20screenshots/13-vinceops-site-https-deployed.png)
 
 ---
 
 ## Network Logging
 
-VPC Flow Logs were enabled to provide visibility into network traffic.
+VPC Flow Logs were enabled to capture network traffic metadata.
 
-The Flow Logs were configured to capture traffic metadata and deliver it to an Amazon S3 bucket.
+The Flow Logs were configured with an Amazon S3 destination for storage and review.
 
-This provided an additional source of network evidence for monitoring and troubleshooting.
+[View the VPC Flow Log evidence](./%20screenshots/04-vpc-flow-logs-active.png)
 
 ---
 
@@ -234,30 +260,31 @@ An authorised external port scan was performed against the VinceOps domain.
 
 ### Initial Scan
 
-The initial result identified:
-
 | Port | Service | State |
 |---:|---|---|
 | 80 | HTTP | Open |
 | 443 | HTTPS | Open |
 
-### Follow-Up Scan
+- [View the initial scan screenshot](./%20screenshots/14-port-scan-before-http-and-https.png)
+- [View the initial scan report](./%20screenshots/%20security-reports/port-scan-before-http-and-https.png)
 
-After reviewing the public exposure, a second scan identified:
+### Follow-Up Scan
 
 | Port | Service | State |
 |---:|---|---|
 | 443 | HTTPS | Open |
 
-This confirmed that the publicly observed web exposure had been reduced to HTTPS.
+[View the follow-up scan report](./%20screenshots/%20security-reports/port-scan-after-https-only.png)
+
+The follow-up scan confirmed that the publicly observed web exposure had been reduced to HTTPS.
 
 ---
 
 ## Implementation Evidence
 
-Sanitized implementation screenshots are available in the evidence register:
+The screenshot evidence register contains the complete sanitized implementation sequence.
 
-[View Month 2 Screenshot Evidence](./screenshots/README.md)
+[View the Month 2 Screenshot Evidence Register](./%20screenshots/README.md)
 
 The evidence includes:
 
@@ -271,8 +298,8 @@ The evidence includes:
 - DNS propagation;
 - Certbot installation;
 - HTTPS certificate deployment;
-- live website validation;
-- security scan results.
+- website validation;
+- initial and follow-up security scans.
 
 ---
 
@@ -280,11 +307,11 @@ The evidence includes:
 
 | Document | Description |
 |---|---|
-| [Network and Web Architecture](./network-web-architecture.md) | Detailed architecture and implementation |
+| [Network and Web Architecture](./network-web-architecture.md) | Detailed deployment architecture |
 | [Architecture Decisions](./decisions.md) | Design decisions and technical reasoning |
-| [Security Testing](./security-testing.md) | External scan results and validation |
+| [Security Testing](./security-testing.md) | External scan and validation process |
 | [Serverless Hosting Bonus](./serverless-bonus.md) | Additional hosting exercise |
-| [Screenshot Evidence](./screenshots/README.md) | Sanitized implementation evidence |
+| [Screenshot Evidence](./%20screenshots/README.md) | Sanitized implementation evidence |
 | [Architecture Diagram](./diagrams/network-web-architecture.png) | Visual representation of the deployment |
 
 ---
@@ -314,8 +341,6 @@ The evidence includes:
 
 Month 2 delivered a complete AWS network-to-HTTPS deployment.
 
-The project successfully connected:
-
 ```text
 AWS Network
     │
@@ -341,4 +366,5 @@ Security Validation
 [Architecture](./network-web-architecture.md) ·
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·
-[Evidence](./screenshots/README.md)
+[Serverless Bonus](./serverless-bonus.md) ·
+[Evidence](./%20screenshots/README.md)
