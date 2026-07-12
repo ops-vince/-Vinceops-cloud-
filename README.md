@@ -1,29 +1,38 @@
 # VinceOps Cloud Infrastructure
 
-> Production-grade AWS cloud infrastructure for a fintech startup -
-> designed, built, and documented by a sole cloud security engineer.
+> An evidence-driven AWS cloud engineering portfolio built around a fictional fintech startup scenario and implemented by a sole cloud security engineer.
 
-## The scenario
-VinceOps is a fintech startup needing secure cloud infrastructure from scratch.  
+## The Scenario
 
-## The engineering challenge
-VinceOps required a secure, scalable, fully automated cloud 
-infrastructure built from zero. Every architectural decision 
-is documented here with the reasoning behind it.
+VinceOps is a fictional fintech startup requiring a secure and scalable AWS cloud foundation.
 
-## What this system includes
-| Phase | Infrastructure layer | Status |
-|-------|---------------------|--------|
-| Month 1 | AWS org · IAM architecture · VPC |🟢 Finished |
-| Month 2 | EC2 · RDS · ELB · S3 · Security policy |🟢in progress |
-| Month 3 | Terraform IaC · GitHub Actions CI/CD |⚪ Upcoming |
-| Month 4 | Docker · Kubernetes EKS · Container security |⚪ Upcoming |
-| Month 5 | Prometheus · Grafana · DevSecOps · Capstone |⚪ Upcoming |
+The infrastructure is being developed progressively, with each milestone documenting the architecture, implementation decisions, security considerations and supporting evidence.
 
-## Stack
-AWS · Terraform · Docker · Kubernetes · GitHub Actions
-Prometheus · Grafana · Trivy · OWASP ZAP · Linux
+## Project Progress
+
+| Phase | Infrastructure Layer | Status |
+|---|---|---|
+| [Month 1](./Month%201/README.md) | AWS Organizations · IAM Identity Center · Multi-account access | 🟢 Finished |
+| [Month 2](./Month%202/README.md) | VPC · EC2 · Nginx · DNS · HTTPS · S3 Flow Logs · Security validation | 🟢 Finished |
+| Month 3 | Terraform IaC · GitHub Actions CI/CD | ⚪ Upcoming |
+| Month 4 | Docker · Kubernetes/EKS · Container security | ⚪ Upcoming |
+| Month 5 | Prometheus · Grafana · DevSecOps capstone | ⚪ Upcoming |
+
+## Implemented Stack
+
+AWS Organizations · IAM Identity Center · Amazon VPC · Amazon EC2 · Amazon S3 · Ubuntu Linux · Nginx · DNS · Certbot · Let’s Encrypt · GitHub
+
+## Planned Stack
+
+Terraform · GitHub Actions · Docker · Kubernetes · Trivy · OWASP ZAP · Prometheus · Grafana
 
 ## Engineer
-Vince Ifeanyi - Cloud Security + DevOps Engineer
-[LinkedIn](https://www.linkedin.com/in/vinceops)
+
+**Vince Ifeanyi**  
+Cloud Security and DevOps Engineer
+
+[LinkedIn](https://www.linkedin.com/in/vinceops) · [Website](https://vinceops.site)
+
+---
+
+> This repository documents controlled laboratory implementations and does not present the environment as a continuously operated production system.
