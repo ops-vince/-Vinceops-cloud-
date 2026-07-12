@@ -307,12 +307,12 @@ The evidence includes:
 
 | Document | Description |
 |---|---|
-| [Network and Web Architecture](./network-web-architecture.md) | Detailed deployment architecture |
-| [Architecture Decisions](./decisions.md) | Design decisions and technical reasoning |
-| [Security Testing](./security-testing.md) | External scan and validation process |
-| [Serverless Hosting Bonus](./serverless-bonus.md) | Additional hosting exercise |
-| [Screenshot Evidence](./%20screenshots/README.md) | Sanitized implementation evidence |
-| [Architecture Diagram](./diagrams/network-web-architecture.png) | Visual representation of the deployment |
+| [Network and Web Architecture](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/network-web-architecture.md) | Detailed deployment architecture |
+| [Architecture Decisions](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/decisions.md) | Design decisions and technical reasoning |
+| [Security Testing](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/security-testing.md) | External scan and validation process |
+| [Serverless Hosting Bonus](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/serverless-bonus.md) | Additional hosting exercise |
+| [Screenshot Evidence](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/%20screenshots/README.md) | Sanitized implementation evidence |
+| [Architecture Diagram](https://github.com/ops-vince/-Vinceops-cloud-/blob/main/Month%202/diagrams/network-web-architecture.png) | Visual representation of the deployment |
 
 ---
 
