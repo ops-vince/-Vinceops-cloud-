@@ -2,45 +2,39 @@
 
 > An evidence-driven AWS cloud engineering portfolio documenting the progressive infrastructure evolution of a fictional fintech environment.
 
-## VinceOps
+## The Scenario
 
-VinceOps is a fictional fintech environment used to model the design, implementation, security and operational evolution of AWS infrastructure.
+VinceOps is a fictional fintech environment used to model secure, scalable and operationally mature AWS infrastructure.
 
-Rather than treating each implementation as an isolated cloud project, the environment develops progressively. Each milestone addresses limitations identified in the previous architecture and introduces stronger security, availability, automation and operational capability.
-
----
+The environment is developed progressively. Each milestone builds on the previous one and records the architecture, engineering decisions, security controls, implementation evidence and lessons learned.
 
 ## Engineering Roadmap
 
-| Phase                              | Engineering Focus                                                                                                | Status      |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
-| [Month 1](./Month%201/README.md)   | AWS Organizations, IAM Identity Center and multi-account access foundation                                       | 🟢 Complete |
-| [Month 2](./Month%202/README.md)   | First secure internet-facing workload with VPC, EC2, Nginx, DNS, HTTPS and network visibility                    | 🟢 Complete |
-| [Month 2B](./Month%202B/README.MD) | Multi-AZ networking, private compute, shared storage, Auto Scaling, load balancing and operational observability | 🟢 Complete |
-| Month 3                            | Terraform Infrastructure as Code and GitHub Actions CI/CD                                                        | ⚪ Upcoming  |
-| Month 4                            | Docker, Kubernetes/EKS and container security                                                                    | ⚪ Upcoming  |
-| Month 5                            | Platform observability and DevSecOps capstone                                                                    | ⚪ Upcoming  |
-
----
+| Phase                                                                          | Engineering Focus                                                                                                | Status      |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | ----------- |
+| [Month 1](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%201)   | AWS Organizations, IAM Identity Center and multi-account access foundation                                       | 🟢 Complete |
+| [Month 2](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%202)   | First secure internet-facing workload with VPC, EC2, Nginx, DNS, HTTPS and network visibility                    | 🟢 Complete |
+| [Month 2B](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%202B) | Multi-AZ networking, private compute, shared storage, Auto Scaling, load balancing and operational observability | 🟢 Complete |
+| Month 3                                                                        | Terraform Infrastructure as Code and GitHub Actions CI/CD                                                        | ⚪ Upcoming  |
+| Month 4                                                                        | Docker, Kubernetes/EKS and container security                                                                    | ⚪ Upcoming  |
+| Month 5                                                                        | Platform observability and DevSecOps capstone                                                                    | ⚪ Upcoming  |
 
 ## Infrastructure Evolution
 
 ### Month 1: Cloud Governance and Identity
 
-VinceOps began by establishing the governance and access foundation required for future workloads.
+VinceOps began by establishing its AWS governance and workforce-access foundation.
 
 Key areas included:
 
 * AWS Organizations
-* separate Development, Staging and Production accounts
+* Development, Staging and Production account separation
 * IAM Identity Center
 * workforce groups and permission sets
 * controlled environment access
-* restricted standing access to Production
+* restricted standing Production access
 
-[Explore Month 1 →](./Month%201/README.md)
-
----
+[Explore Month 1](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%201)
 
 ### Month 2: First Secure Internet-Facing Workload
 
@@ -49,8 +43,6 @@ Month 2 introduced the first public VinceOps workload.
 The environment established:
 
 * custom VPC networking
-* public subnetting and routing
-* Internet Gateway connectivity
 * EC2 compute
 * Nginx
 * Route 53 DNS
@@ -60,19 +52,17 @@ The environment established:
 
 This established the first secure public application path for VinceOps.
 
-[Explore Month 2 →](./Month%202/README.md)
-
----
+[Explore Month 2](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%202)
 
 ### Month 2B: High Availability, Private Compute and Observability
 
-Month 2B addressed the limitations of the earlier single-instance workload.
+Month 2B addressed the limitations of the earlier single-instance architecture.
 
-The architecture evolved to include:
+The environment evolved to include:
 
 * public and private subnets across two Availability Zones
 * private EC2 application servers
-* controlled bastion administration
+* bastion-based administrative access
 * NAT-based private egress
 * Amazon EFS shared storage
 * EC2 Launch Templates
@@ -80,21 +70,19 @@ The architecture evolved to include:
 * Application Load Balancing
 * application health checks
 * Route 53 and ACM-managed HTTPS
-* IAM-based access to Systems Manager Parameter Store
+* IAM-based secret retrieval through Systems Manager Parameter Store
 * Datadog infrastructure monitoring
 * Slack operational alerting
 
-The environment was tested through real troubleshooting and controlled load conditions. Application health, bootstrap failures, IAM access, secret retrieval, monitoring integration, alert delivery and recovery were validated before the temporary Month 2B infrastructure was decommissioned.
+The infrastructure was tested through real troubleshooting and controlled load conditions, including application health, bootstrap failures, IAM access, monitoring integration, alert delivery and recovery.
 
-[Explore Month 2B →](./Month%202B/README.MD)
-
----
+[Explore Month 2B](https://github.com/ops-vince/-Vinceops-cloud-/tree/main/Month%202B)
 
 ## Infrastructure Progression
 
 ```text
 Month 1
-Cloud governance and access foundation
+Cloud governance and identity
         |
         v
 Month 2
@@ -116,9 +104,7 @@ Month 3
 Infrastructure as Code and CI/CD
 ```
 
-Each VinceOps milestone addresses a new engineering requirement rather than functioning as an isolated AWS exercise.
-
----
+Each milestone addresses a new VinceOps engineering requirement rather than functioning as an isolated AWS exercise.
 
 ## Implemented Stack
 
@@ -138,17 +124,11 @@ VPC Flow Logs · Datadog · Slack alerting
 
 Git · GitHub · architecture documentation · sanitised implementation evidence · troubleshooting records · security validation
 
----
-
 ## Planned Stack
 
 Terraform · GitHub Actions · Docker · Kubernetes/EKS · Trivy · OWASP ZAP · Prometheus · Grafana
 
----
-
 ## Engineering Principles
-
-The VinceOps infrastructure is developed around several recurring principles:
 
 * minimise unnecessary public exposure
 * separate public ingress from private application compute
@@ -161,49 +141,6 @@ The VinceOps infrastructure is developed around several recurring principles:
 * test alert and recovery paths
 * preserve troubleshooting as part of the engineering record
 
----
-
-## Repository Structure
-
-```text
--Vinceops-cloud-/
-|
-├── Month 1/
-├── Month 2/
-├── Month 2B/
-│   ├── architecture/
-│   ├── evidence/
-│   ├── scripts/
-│   ├── README.MD
-│   ├── decisions.md
-│   └── troubleshooting.md
-│
-├── Month 3/
-├── Month 4/
-├── Month 5/
-└── README.md
-```
-
----
-
-## Evidence-Driven Engineering
-
-VinceOps intentionally preserves more than final-state architecture.
-
-Where appropriate, each infrastructure milestone includes:
-
-* architecture decisions
-* implementation evidence
-* security considerations
-* automation
-* validation results
-* troubleshooting records
-* operational lessons
-
-The repository therefore demonstrates both **what was built** and **how the infrastructure was engineered, tested and improved**.
-
----
-
 ## Engineer
 
 **Vince Ifeanyi**
@@ -213,4 +150,4 @@ Cloud Security and DevOps Engineer
 
 ---
 
-> VinceOps is a fictional fintech environment used to demonstrate practical cloud architecture, security, automation and operational engineering. The repository does not represent a continuously operated production financial platform.
+> VinceOps is a fictional fintech environment used to demonstrate practical cloud architecture, security, automation and operational engineering. This repository does not represent a continuously operated production financial platform.
