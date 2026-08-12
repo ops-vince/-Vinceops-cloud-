@@ -8,7 +8,7 @@ This record preserves the most important troubleshooting cases from the VinceOps
 
 ---
 
-## Incident 1 — Auto Scaling Instance Became Unhealthy
+## Incident 1 - Auto Scaling Instance Became Unhealthy
 
 ### Symptom
 
@@ -66,7 +66,7 @@ Launch Template versioning also provides a safer way to introduce bootstrap chan
 
 ---
 
-## Incident 2 — Amazon Linux 2023 Package Conflict Broke Bootstrap
+## Incident 2 - Amazon Linux 2023 Package Conflict Broke Bootstrap
 
 ### Symptom
 
@@ -142,7 +142,7 @@ Retest
 
 ---
 
-## Incident 3 — EC2 Could Not Retrieve the Datadog Secret
+## Incident 3 - EC2 Could Not Retrieve the Datadog Secret
 
 ### Symptom
 
@@ -220,7 +220,7 @@ This is more efficient than debugging the downstream monitoring agent first.
 
 ---
 
-## Incident 4 — Datadog API Validation Returned HTTP Errors
+## Incident 4 - Datadog API Validation Returned HTTP Errors
 
 ### Symptom
 
@@ -246,13 +246,13 @@ The Datadog validation endpoint was used to determine whether the stored secret 
 
 This exposed two separate problems.
 
-### Root Cause — Part 1
+### Root Cause - Part 1
 
 The stored value was initially malformed.
 
 This resulted in request-format and header-related failures.
 
-### Root Cause — Part 2
+### Root Cause - Part 2
 
 There was also confusion between two different Datadog credential types:
 
@@ -303,7 +303,7 @@ This reduced the number of unknowns being investigated at the same time.
 
 ---
 
-## Incident 5 — Datadog Monitor Had No Working Slack Recipient
+## Incident 5 - Datadog Monitor Had No Working Slack Recipient
 
 ### Symptom
 
@@ -355,7 +355,7 @@ The complete notification path must be tested independently before it is needed 
 
 ---
 
-## Incident 6 — Controlled CPU Alert and Recovery Validation
+## Incident 6 - Controlled CPU Alert and Recovery Validation
 
 ### Objective
 
