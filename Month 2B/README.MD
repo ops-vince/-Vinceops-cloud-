@@ -143,7 +143,7 @@ Terraform · GitHub Actions · Docker · Kubernetes/EKS · Trivy · OWASP ZAP ·
 
 ## Engineer
 
-**Vince Ifeanyi**
+**Ndimneze vincent**
 Cloud Security and DevOps Engineer
 
 [LinkedIn](https://www.linkedin.com/in/vinceops) · [Website](https://vinceops.site)
