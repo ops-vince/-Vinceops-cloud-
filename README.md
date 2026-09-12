@@ -10,13 +10,16 @@ The infrastructure is being developed progressively, with each milestone documen
 
 ## Project Progress
 
-| Phase | Infrastructure Layer | Status |
+| Phase | Infrastructure Capability | Status |
 |---|---|---|
-| [Month 1](./Month%201/README.md) | AWS Organizations · IAM Identity Center · Multi-account access | 🟢 Finished |
-| [Month 2](./Month%202/README.md) | VPC · EC2 · Nginx · DNS · HTTPS · S3 Flow Logs · Security validation | 🟢 Finished |
-| Month 3 | Terraform IaC · GitHub Actions CI/CD | ⚪ Upcoming |
-| Month 4 | Docker · Kubernetes/EKS · Container security | ⚪ Upcoming |
-| Month 5 | Prometheus · Grafana · DevSecOps capstone | ⚪ Upcoming |
+| 01 | AWS Organizations · IAM Identity Center · Multi-account access | ✅ Completed |
+| 02 | VPC · EC2 · Nginx · DNS · HTTPS · S3 Flow Logs · Networking Security | ✅ Completed |
+| 02B | Security Validation · Evidence Collection · Troubleshooting | ✅ Completed |
+| 03 | GitHub Actions CI/CD Pipeline · Automated Workflow Validation | ✅ Completed |
+| 04 | Docker · Container Images · Container Deployment · Portainer | ⏳ Upcoming |
+| 05 | Kubernetes · Container Orchestration · AWS EKS | ⏳ Upcoming |
+| 06 | Terraform · Infrastructure as Code · State Management | ⏳ Upcoming |
+| 07 | Prometheus · Grafana · DevSecOps Monitoring | ⏳ Upcoming |
 
 ## Implemented Stack
 
@@ -24,7 +27,7 @@ AWS Organizations · IAM Identity Center · Amazon VPC · Amazon EC2 · Amazon S
 
 ## Planned Stack
 
-Terraform · GitHub Actions · Docker · Kubernetes · Trivy · OWASP ZAP · Prometheus · Grafana
+AWS · GitHub Actions · Docker · Portainer · Kubernetes · Terraform · Trivy · OWASP ZAP · Prometheus · Grafana
 
 ## Engineer
 
