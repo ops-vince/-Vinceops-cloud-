@@ -1,41 +1,152 @@
-# VinceOps Cloud Infrastructure
+# VinceOps Cloud Infrastructure Portfolio
 
-> An evidence-driven AWS cloud engineering portfolio built around a fictional fintech startup scenario and implemented by a sole cloud security engineer.
+> An evidence-driven AWS Cloud and DevOps engineering portfolio built around a fictional fintech startup scenario.
 
-## The Scenario
+This repository documents the progressive design, implementation, security validation, and deployment of cloud infrastructure using industry-standard DevOps practices.
 
-VinceOps is a fictional fintech startup requiring a secure and scalable AWS cloud foundation.
+---
 
-The infrastructure is being developed progressively, with each milestone documenting the architecture, implementation decisions, security considerations and supporting evidence.
+# Project Overview
 
-## Project Progress
+VinceOps represents a cloud engineering journey covering:
 
-| Phase | Infrastructure Capability | Status |
+- AWS infrastructure design
+- Identity and access management
+- Networking and security
+- CI/CD concepts
+- Containerization
+- Cloud deployment
+- Infrastructure automation
+- Monitoring and observability
+
+Each phase contains implementation notes, configuration files, and supporting evidence.
+
+---
+
+# Repository Structure
+
+| Phase | Project | Status |
 |---|---|---|
-| 01 | AWS Organizations · IAM Identity Center · Multi-account access | ✅ Completed |
-| 02 | VPC · EC2 · Nginx · DNS · HTTPS · S3 Flow Logs · Networking Security | ✅ Completed |
-| 02B | Security Validation · Evidence Collection · Troubleshooting | ✅ Completed |
-| 03 | GitHub Actions CI/CD Pipeline · Automated Workflow Validation | ✅ Completed |
-| 04 | Docker · Container Images · Container Deployment · Portainer | ⏳ Upcoming |
-| 05 | Kubernetes · Container Orchestration · AWS EKS | ⏳ Upcoming |
-| 06 | Terraform · Infrastructure as Code · State Management | ⏳ Upcoming |
-| 07 | Prometheus · Grafana · DevSecOps Monitoring | ⏳ Upcoming |
+| 01 | AWS Cloud Foundation | Completed |
+| 02 | Networking & Security | Completed |
+| 02B | Security Validation & Evidence Collection | Completed |
+| 03 | CI/CD Pipeline | Completed |
+| 04 | Containerization & Cloud Deployment | Completed |
+| 05 | Kubernetes | Upcoming |
+| 06 | Infrastructure as Code | Upcoming |
+| 07 | Observability & Security Monitoring | Upcoming |
 
-## Implemented Stack
+---
 
-AWS Organizations · IAM Identity Center · Amazon VPC · Amazon EC2 · Amazon S3 · Ubuntu Linux · Nginx · DNS · Certbot · Let’s Encrypt · GitHub
+# Completed Projects
 
-## Planned Stack
+## 01 - Cloud Foundation
 
-AWS · GitHub Actions · Docker · Portainer · Kubernetes · Terraform · Trivy · OWASP ZAP · Prometheus · Grafana
+AWS foundational setup including:
 
-## Engineer
+- AWS Organizations
+- IAM Identity Center
+- Account structure
+- Initial cloud configuration
+
+---
+
+## 02 - Networking & Security
+
+Implemented cloud networking and security foundations:
+
+- Amazon VPC
+- EC2 networking
+- Security groups
+- HTTPS configuration
+- S3 security validation
+
+---
+
+## 03 - CI/CD Pipeline
+
+Exploration and implementation of automation workflows:
+
+- GitHub workflow concepts
+- Build automation
+- Deployment workflow testing
+
+---
+
+## 04 - Containerization
+
+A full-stack movie application was containerized and deployed using:
+
+- Docker
+- React frontend
+- Spring Boot backend
+- MongoDB
+- AWS EC2
+- Amazon ECR
+
+Project documentation:
+
+[View Containerization Project](./04-Containerization)
+
+Evidence:
+
+[Deployment Screenshots](./04-Containerization/docs/screenshots)
+
+---
+
+# Technology Stack
+
+## Cloud
+
+- AWS EC2
+- Amazon ECR
+- Amazon S3
+- Amazon VPC
+- IAM
+
+## DevOps
+
+- Docker
+- GitHub
+- Linux Ubuntu
+- Git workflows
+
+## Application
+
+- React
+- Spring Boot
+- MongoDB
+
+## Future Stack
+
+- Kubernetes
+- Terraform
+- Prometheus
+- Grafana
+- Security scanning tools
+
+---
+
+# Engineering Approach
+
+The repository focuses on:
+
+- Infrastructure documentation
+- Reproducible deployments
+- Security-aware cloud practices
+- Production troubleshooting
+- Evidence-based implementation
+
+---
+
+# Engineer
 
 **Vince Ifeanyi**  
 Cloud Security and DevOps Engineer
 
-[LinkedIn](https://www.linkedin.com/in/vinceops) · [Website](https://vinceops.site)
+LinkedIn: https://www.linkedin.com/in/vinceops  
+Website: https://vinceops.site
 
 ---
 
-> This repository documents controlled laboratory implementations and does not present the environment as a continuously operated production system.
+> This repository documents controlled laboratory implementations and engineering projects. It is not presented as a continuously operated production environment.
