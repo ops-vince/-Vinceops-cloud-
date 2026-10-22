@@ -1,1 +1,28 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vinceops-nginx
+  labels:
+    app: vinceops-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vinceops-nginx
+  template:
+    metadata:
+      labels:
+        app: vinceops-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable-alpine
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
