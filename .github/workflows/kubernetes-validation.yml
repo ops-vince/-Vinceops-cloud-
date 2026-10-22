@@ -1,0 +1,33 @@
+name: Kubernetes Manifest Validation
+
+on:
+  push:
+    paths:
+      - "05-Kubernetes/**"
+      - ".github/workflows/kubernetes-validation.yml"
+  pull_request:
+    paths:
+      - "05-Kubernetes/**"
+      - ".github/workflows/kubernetes-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Kubernetes YAML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Project 02 manifests
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/repo:ro" \
+            ghcr.io/yannh/kubeconform:v0.8.0-alpine \
+            -strict -summary -verbose \
+            -kubernetes-version 1.36.0 \
+            /repo/05-Kubernetes/project-02-declarative-configuration/manifests
