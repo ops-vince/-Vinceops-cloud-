@@ -1,0 +1,50 @@
+name: Helm Chart Validation
+
+on:
+  push:
+    paths:
+      - "05-Kubernetes/project-03-helm/**"
+      - ".github/workflows/helm-validation.yml"
+  pull_request:
+    paths:
+      - "05-Kubernetes/project-03-helm/**"
+      - ".github/workflows/helm-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v4.3.1
+
+      - name: Lint Helm Chart
+        run: |
+          helm lint 05-Kubernetes/project-03-helm/vinceops-web
+
+      - name: Render Kubernetes manifests
+        run: |
+          helm template vinceops-lab \
+            05-Kubernetes/project-03-helm/vinceops-web \
+            --namespace vinceops-demo \
+            --set replicaCount=2 \
+            --set webContent.version=2 \
+            > /tmp/vinceops-rendered.yaml
+
+      - name: Validate Kubernetes schemas
+        run: |
+          docker run --rm \
+            -v /tmp:/data:ro \
+            ghcr.io/yannh/kubeconform:v0.8.0-alpine \
+            -strict -summary \
+            -kubernetes-version 1.36.0 \
+            /data/vinceops-rendered.yaml
