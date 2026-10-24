@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-web-content
+  namespace: {{ .Release.Namespace }}
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>VinceOps Helm Lab</title>
+    </head>
+    <body>
+      <h1>{{ .Values.webContent.title }}</h1>
+      <p>Project 03: Helm Configuration</p>
+      <p>Configuration Version: {{ .Values.webContent.version }}</p>
+    </body>
+    </html>
