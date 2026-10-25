@@ -2,4 +2,4 @@ replicaCount: 2
 
 webContent:
   title: "Welcome to VinceOps Development"
-  version: 1
+  version: 2
