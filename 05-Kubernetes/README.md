@@ -2,58 +2,34 @@
 
 ## Purpose
 
-Build practical Kubernetes skills by deploying, inspecting, configuring, and troubleshooting containerized workloads. This phase extends the existing VinceOps containerization work and prepares the platform for Helm, GitOps, and infrastructure automation.
+Learn to operate Kubernetes workloads, manage application configuration declaratively, and package the same application into reusable Helm releases. This phase prepares VinceOps for GitOps, CI/CD integration and eventually Terraform-provisioned infrastructure.
 
-## Status
-
-**In progress.** Project 01 is completed and documented. Project 02 is the next learning project and has not yet been implemented.
-
-## Project Roadmap
+## Progress
 
 | Project | Focus | Status |
 |---|---|---|
-| [Project 01 — Kubernetes Fundamentals](./project-01-kubernetes-fundamentals/) | K3s, Deployment, ReplicaSet behavior, Pods, Service, scaling, and self-healing | Completed |
-| [Project 02 — Declarative Configuration](./project-02-declarative-configuration/) | Namespaces, ConfigMaps, configuration updates, and declarative workflows | Next |
-| Project 03 — Helm | Package Kubernetes resources as reusable charts | Planned |
-| Project 04 — Argo CD and GitOps | Reconcile desired configuration from Git | Planned |
-| Project 05 — CI/CD Integration | Build/publish images and promote version changes | Planned |
-| Project 06 — Networking and Operations | Ingress, health probes, access control, and troubleshooting | Planned |
+| [Project 01 — Kubernetes Fundamentals](./project-01-kubernetes-fundamentals/) | K3s, Deployment, ReplicaSet behavior, Pods, ClusterIP Service, scaling and self-healing | Completed and documented |
+| [Project 02 — Declarative Configuration](./project-02-declarative-configuration/) | Namespace, ConfigMap-mounted Nginx page, update, rollback, evidence and manifest validation | Practical test completed and documented |
+| [Project 03 — Helm](./project-03-helm/) | Chart templates and values, release install, upgrade, ConfigMap propagation, rollback, validation | Practical test completed; documentation prepared |
+| Project 04 — Argo CD and GitOps | Reconcile desired state from Git | Planned |
+| Project 05 — CI/CD Integration | Image build/publish and deployment changes | Planned |
+| Project 06 — Networking and Operations | Ingress, TLS, policy, probes, monitoring and troubleshooting | Planned |
 
-## Architecture Direction
-
-The intended progression is:
+## Architecture progression
 
 ```text
-Developer workstation (Ubuntu WSL)
-          |
-          | Git + YAML manifests
-          v
-       GitHub
-          |
-          | kubectl apply (early projects)
-          v
- Temporary Kubernetes lab (K3s on AWS EC2)
-          |
-          +--> Deployment --> ReplicaSet --> Pods
-          |
-          +--> Service --> matching Pod endpoints
-
-Later:
-GitHub + Helm charts --> Argo CD / GitOps --> Kubernetes
-Terraform --> repeatable AWS infrastructure and platform bootstrap
+Ubuntu WSL -> GitHub -> static manifest validation -> kubectl apply -> K3s (Project 02)
+Ubuntu WSL -> GitHub -> Helm chart validation -> helm install/upgrade -> K3s (Project 03)
+GitHub -> Argo CD -> Kubernetes (planned Project 04)
+Terraform -> repeatable AWS platform infrastructure (later capstone)
 ```
 
-The architecture is built incrementally. Helm, Argo CD, CI/CD integration, and Terraform are not claimed as implemented in Project 01.
+Helm and Argo CD do not replace Kubernetes; they help manage resources running on Kubernetes. GitHub Actions validation is not proof of a successful live deployment.
 
-## Cost and Security Approach
+## Cost and security
 
-- Use temporary AWS resources only for hands-on tasks that require a running cluster.
-- Verify the AWS Region, instance type, public-IP configuration, and security group before launch.
-- Restrict SSH to the administrator's current IP address; do not expose the Kubernetes API publicly.
-- Capture evidence and terminate temporary compute resources after the lab.
-- Verify that unused EBS volumes and public IP allocations are not left behind.
-- Never commit private keys, credentials, or real Secret values.
+All hands-on clusters used for these exercises are temporary AWS labs. Restrict EC2 SSH to the administrator's IP, avoid exposing the Kubernetes API publicly, and never publish SSH keys or admin kubeconfigs. After each exercise, verify EC2 termination, EBS cleanup and unused public IP allocations.
 
-## Evidence
+## Evidence standard
 
-Project-specific commands, manifests, results, and screenshots are recorded in each project's directory.
+Each completed project's README should distinguish verified command output from expectations, explain troubleshooting, link actual screenshots, and state any remaining limitations or cleanup work.
