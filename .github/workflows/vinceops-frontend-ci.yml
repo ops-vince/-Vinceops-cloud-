@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -139,3 +139,32 @@ jobs:
           labels: |
             org.opencontainers.image.source=https://github.com/ops-vince/-Vinceops-cloud-
             org.opencontainers.image.revision=${{ github.sha }}
+
+      - name: Promote published image to GitOps
+        env:
+          IMAGE_TAG: sha-${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          FILE="05-Kubernetes/project-05-ci-cd/chart/values.yaml"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout -B main origin/main
+
+          sed -i -E \
+            "s/^  tag: sha-[0-9a-f]{40}$/  tag: ${IMAGE_TAG}/" \
+            "$FILE"
+
+          grep -Fx "  tag: ${IMAGE_TAG}" "$FILE"
+
+          git add "$FILE"
+
+          if git diff --cached --quiet; then
+            echo "GitOps image tag is already up to date."
+          else
+            git commit -m "chore(gitops): promote frontend ${IMAGE_TAG}"
+            git push origin HEAD:main
+          fi
