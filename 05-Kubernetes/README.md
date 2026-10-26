@@ -1,35 +1,49 @@
-# Phase 05 — Kubernetes
+# Kubernetes Platform Engineering | VinceOps
 
-## Purpose
+This workstream develops a reusable cloud-native delivery platform for the VinceOps simulated fintech environment. The learning sequence progresses from fundamental workload reconciliation to automated GitOps delivery, networking, and namespace-scoped security.
 
-Learn to operate Kubernetes workloads, manage application configuration declaratively, and package the same application into reusable Helm releases. This phase prepares VinceOps for GitOps, CI/CD integration and eventually Terraform-provisioned infrastructure.
+## Completed project sequence
 
-## Progress
-
-| Project | Focus | Status |
+| Project | Implementation | Evidence |
 |---|---|---|
-| [Project 01 — Kubernetes Fundamentals](./project-01-kubernetes-fundamentals/) | K3s, Deployment, ReplicaSet behavior, Pods, ClusterIP Service, scaling and self-healing | Completed and documented |
-| [Project 02 — Declarative Configuration](./project-02-declarative-configuration/) | Namespace, ConfigMap-mounted Nginx page, update, rollback, evidence and manifest validation | Practical test completed and documented |
-| [Project 03 — Helm](./project-03-helm/) | Chart templates and values, release install, upgrade, ConfigMap propagation, rollback, validation | Practical test completed; documentation prepared |
-| Project 04 — Argo CD and GitOps | Reconcile desired state from Git | Planned |
-| Project 05 — CI/CD Integration | Image build/publish and deployment changes | Planned |
-| Project 06 — Networking and Operations | Ingress, TLS, policy, probes, monitoring and troubleshooting | Planned |
+| [01 — Kubernetes Fundamentals](./project-01-kubernetes-fundamentals/) | K3s Deployment and ClusterIP Service, replicas, Pod recovery, desired state | [Screenshots](./project-01-kubernetes-fundamentals/screenshots/) |
+| [02 — Declarative Configuration](./project-02-declarative-configuration/) | Namespaces, ConfigMap content, updates, rollback and manifest checks | [Screenshots](./project-02-declarative-configuration/screenshots/) |
+| [03 — Helm Packaging](./project-03-helm/) | Parameterized chart, ConfigMap volume integration, upgrade, rollback and lint | [Screenshots](./project-03-helm/screenshots/) |
+| [04 — Argo CD / GitOps](./project-04-argocd-gitops/) | Application manifests, automated synchronization and reconciliation | [Screenshots](./project-04-argocd-gitops/screenshots/) |
+| [05 — Frontend CI/CD](./project-05-ci-cd/) | React build, Docker smoke test, GHCR publication, automated Helm image promotion, Argo CD delivery | [Screenshots](./project-05-ci-cd/screenshots/) |
+| [06 — Networking & Security](./project-06-networking-security-operations/) | Traefik Ingress, self-signed lab TLS, NetworkPolicy, RBAC checks, PDB and diagnostics | [Screenshots](./project-06-networking-security-operations/screenshots/) |
 
-## Architecture progression
+All six practical labs have been documented. Read each project's README for exact validation steps and unresolved limitations.
 
-```text
-Ubuntu WSL -> GitHub -> static manifest validation -> kubectl apply -> K3s (Project 02)
-Ubuntu WSL -> GitHub -> Helm chart validation -> helm install/upgrade -> K3s (Project 03)
-GitHub -> Argo CD -> Kubernetes (planned Project 04)
-Terraform -> repeatable AWS platform infrastructure (later capstone)
+## Platform progression
+
+```mermaid
+flowchart LR
+  YAML[Declarative manifests] --> HELM[Reusable Helm charts]
+  HELM --> GIT[Git repository: desired state]
+  GIT --> ARGO[Argo CD: sync and reconcile]
+  CI[GitHub Actions: build/test] --> REG[GHCR image]
+  REG --> PROM[Promote image tag in Git]
+  PROM --> GIT
+  ARGO --> K3S[K3s development cluster]
+  K3S --> TRAEFIK[Traefik HTTPS routing]
+  K3S --> POLICY[RBAC + NetworkPolicy + PDB]
 ```
 
-Helm and Argo CD do not replace Kubernetes; they help manage resources running on Kubernetes. GitHub Actions validation is not proof of a successful live deployment.
+## Implementation boundaries
 
-## Cost and security
+- Labs used **temporary, primarily single-node K3s clusters** rather than an always-on production Kubernetes service.
+- Project 05 demonstrates delivery of the frontend image, **not** a fully integrated React/Spring Boot/MongoDB platform inside Kubernetes.
+- Project 06 demonstrates verified self-signed TLS routing and RBAC checks. The post-policy blocked connection was observed, but the captured pre-policy baseline was not conclusive enough to attribute blocking definitively to the NetworkPolicy.
+- A PodDisruptionBudget regulates supported voluntary evictions; it does not make a single-node cluster highly available.
+- **Terraform infrastructure automation belongs to the next workstream**, after this Kubernetes foundation.
 
-All hands-on clusters used for these exercises are temporary AWS labs. Restrict EC2 SSH to the administrator's IP, avoid exposing the Kubernetes API publicly, and never publish SSH keys or admin kubeconfigs. After each exercise, verify EC2 termination, EBS cleanup and unused public IP allocations.
+## Working standards
 
-## Evidence standard
+1. Store manifests and Helm chart source next to the relevant project documentation.
+2. Preserve sanitized console/terminal screenshots within `screenshots/`.
+3. Validate manifests with Kubeconform and Helm charts with `helm lint` and `helm template`; then independently test against a live cluster where applicable.
+4. Keep private keys, kubeconfigs, AWS credentials and Terraform state **out of version control**.
+5. Treat README status as an evidence-based statement rather than a promise of continuous service.
 
-Each completed project's README should distinguish verified command output from expectations, explain troubleshooting, link actual screenshots, and state any remaining limitations or cleanup work.
+[Back to VinceOps portfolio overview](../README.md)
