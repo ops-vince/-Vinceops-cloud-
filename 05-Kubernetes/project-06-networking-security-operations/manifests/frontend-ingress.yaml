@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vinceops-frontend-ingress
+  namespace: vinceops-ci-dev
+  labels:
+    app: vinceops-frontend
+spec:
+  ingressClassName: traefik
+
+  tls:
+    - hosts:
+        - vinceops.test
+      secretName: vinceops-frontend-tls
+
+  rules:
+    - host: vinceops.test
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vinceops-frontend-dev
+                port:
+                  number: 80

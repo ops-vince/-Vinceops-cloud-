@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: vinceops-observer
+  namespace: vinceops-ci-dev
+automountServiceAccountToken: false
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: vinceops-observer-role
+  namespace: vinceops-ci-dev
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get"]
+
+  - apiGroups: ["apps"]
+    resources: ["deployments"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: vinceops-observer-binding
+  namespace: vinceops-ci-dev
+subjects:
+  - kind: ServiceAccount
+    name: vinceops-observer
+    namespace: vinceops-ci-dev
+roleRef:
+  kind: Role
+  name: vinceops-observer-role
+  apiGroup: rbac.authorization.k8s.io

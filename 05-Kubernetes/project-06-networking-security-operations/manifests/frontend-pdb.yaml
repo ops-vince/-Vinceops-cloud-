@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: vinceops-frontend-pdb
+  namespace: vinceops-ci-dev
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: vinceops-frontend-dev
