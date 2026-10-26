@@ -1,26 +1,18 @@
-# Use an official Node.js runtime as a parent image
-FROM node:18-alpine
+# Stage 1: Build the React application
+FROM node:22-bookworm-slim AS build
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json first to install dependencies
-COPY package*.json ./
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application
 COPY . .
-
-# Build the React app for production
 RUN npm run build
 
-# Serve the app using a simple static file server (e.g., serve)
-RUN npm install -g serve
+# Stage 2: Serve the static application
+FROM nginxinc/nginx-unprivileged:stable-alpine AS runtime
 
-# Expose port 3000 (the port that the React app will run on)
-EXPOSE 3000
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
 
-# Command to run the app using the static file server
-CMD ["serve", "-s", "build", "-l", "3000"]
+EXPOSE 8080
