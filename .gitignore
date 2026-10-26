@@ -1,35 +1,32 @@
-# Credentials, private access files, and local environment configuration
+# Environment and credentials
 .env
+*.env
 .env.*
 !.env.example
 *.pem
 *.key
 *.p12
 *.pfx
-.kube/
+*.kubeconfig
 kubeconfig
-kubeconfig-*
+kubeconfig.*
 
-# Terraform local state, private variables, and working data
+# Terraform local state and sensitive variable inputs
 .terraform/
 *.tfstate
 *.tfstate.*
 *.tfvars
 *.tfvars.json
-!*.tfvars.example
 *.tfplan
 
-# Build and dependency outputs (keep source and lockfiles)
-node_modules/
-**/build/
-**/dist/
-**/target/
-__pycache__/
-*.pyc
-*.log
-
-# Local evidence-package downloads and operating-system metadata
+# Local archives / downloaded evidence bundles
 *.zip
 *:Zone.Identifier
+
+# Application and development artifacts
+node_modules/
+build/
+dist/
+__pycache__/
+*.py[cod]
 .DS_Store
-Thumbs.db
