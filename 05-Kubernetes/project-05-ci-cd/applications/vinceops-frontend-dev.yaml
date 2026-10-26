@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vinceops-frontend-dev
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/ops-vince/-Vinceops-cloud-.git
+    targetRevision: main
+    path: 05-Kubernetes/project-05-ci-cd/chart
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vinceops-ci-dev
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
+    syncOptions:
+      - CreateNamespace=true

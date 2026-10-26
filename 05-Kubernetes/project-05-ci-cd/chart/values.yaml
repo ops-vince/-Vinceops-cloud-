@@ -1,0 +1,17 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/ops-vince/vinceops-frontend
+  tag: sha-3a2e34f374d0d9b292569d0fdef8f1c55fff66af
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
