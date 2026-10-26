@@ -85,19 +85,43 @@ jobs:
 
       - name: Test running container
         run: |
+          set -euo pipefail
+
           docker run -d \
             --name vinceops-smoke \
             -p 127.0.0.1:18085:8080 \
             vinceops-frontend:smoke
 
-          trap 'docker rm -f vinceops-smoke' EXIT
+          trap 'docker logs --tail 30 vinceops-smoke || true; docker rm -f vinceops-smoke || true' EXIT
 
-          curl --fail --silent --show-error \
-            --retry 10 --retry-connrefused --retry-delay 2 \
-            http://127.0.0.1:18085/healthz | grep -qx ok
+          ready=false
 
-          curl --fail --silent --show-error \
+          for attempt in $(seq 1 30); do
+            echo "Checking Nginx readiness: $attempt"
+
+            if curl -fsS --max-time 3 \
+              http://127.0.0.1:18085/healthz 2>/dev/null | grep -qx ok; then
+              ready=true
+              break
+            fi
+
+            if [ "$(docker inspect -f '{{.State.Running}}' vinceops-smoke)" != "true" ]; then
+              echo "Container stopped unexpectedly"
+              exit 1
+            fi
+
+            sleep 2
+          done
+
+          if [ "$ready" != true ]; then
+            echo "Container failed readiness verification"
+            exit 1
+          fi
+
+          curl -fsS --max-time 10 \
             http://127.0.0.1:18085/ > /dev/null
+
+          echo "Frontend container smoke test passed"
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
