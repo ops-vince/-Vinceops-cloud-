@@ -136,10 +136,6 @@ Start with any [project README](#explore-the-engineering-milestones), then follo
 
 Lab infrastructure was often terminated after testing. Historical screenshots therefore document **observed results at the time of validation**, not necessarily services that remain accessible now. The Project 06 NetworkPolicy result is documented with its test limitations; schema validity alone is not treated as proof of enforcement.
 
-## What's next
-
-**Complete the repository cleanup, then define the integrated VinceOps capstone.** The capstone brief will determine how the established AWS, security, application delivery, Kubernetes and operational work fits into one end-to-end engineering project. Terraform and extended observability belong within that integrated design, rather than being shown here as independent future projects.
-
 ---
 
 *VinceOps is a simulated engineering organization and portfolio environment, not a commercial financial service or an always-on production deployment.*
