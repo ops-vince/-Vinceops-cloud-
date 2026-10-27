@@ -1,4 +1,4 @@
-# Month 1: AWS Multi-Account and IAM Foundation
+# Phase 1: AWS Multi-Account and IAM Foundation
 
 ![AWS](https://img.shields.io/badge/AWS-Organizations-FF9900?logo=amazonaws&logoColor=white)
 ![IAM](https://img.shields.io/badge/IAM-Identity%20Center-DD344C?logo=amazonaws&logoColor=white)
