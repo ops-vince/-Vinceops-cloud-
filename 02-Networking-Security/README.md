@@ -311,7 +311,7 @@ The evidence includes:
 | [Architecture Decisions](./decisions.md) | Design decisions and technical reasoning |
 | [Security Testing](./security-testing.md) | External scan and validation process |
 | [Serverless Hosting Bonus](./serverless-bonus.md) | Additional hosting exercise |
-| [Screenshot Evidence](./screenshots/README.md) | Sanitized implementation evidence |
+| [Screenshot Evidence](./%20screenshots/README.md) | Sanitized implementation evidence |
 
 ---
 
@@ -360,7 +360,7 @@ Security Validation
 
 ## Navigation
 
-[← Month 1: AWS Organisation and IAM Foundation](../Month%201/README.md) ·
+[← Month 1: AWS Organisation and IAM Foundation](../01-Cloud-Foundation/README.md) ·
 [Portfolio Home](../README.md) ·
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·

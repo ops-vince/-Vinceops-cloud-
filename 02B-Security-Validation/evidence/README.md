@@ -173,5 +173,5 @@ The Month 2B evidence therefore focuses on:
 
 ### VinceOps Cloud
 
-[← Month 2B Overview](../README.md) · [Architecture](../architecture/) · [Engineering Decisions](../decisions.md) · [Troubleshooting](../troubleshooting.md)
+[← Month 2B Overview](../README.MD) · [Architecture](../architecture/) · [Engineering Decisions](../decisions.md) · [Troubleshooting](../troubleshooting.md)
 

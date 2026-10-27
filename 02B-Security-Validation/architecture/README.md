@@ -37,7 +37,7 @@ Administrative access is routed through the bastion host, while operational tele
 
 ---
 
-[← Month 2B Overview](../README.md) ·
+[← Month 2B Overview](../README.MD) ·
 [Engineering Evidence](../evidence/README.md) ·
 [Engineering Decisions](../decisions.md) ·
 [Troubleshooting](../troubleshooting.md)

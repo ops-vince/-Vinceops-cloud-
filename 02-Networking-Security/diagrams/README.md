@@ -165,9 +165,9 @@ The subnet was used to host the internet-facing EC2 web server.
 
 ### Evidence
 
-[View public-subnet evidence](./%20screenshots/01-public-subnet-created.png)
+[View public-subnet evidence](../%20screenshots/01-public-subnet-created.png)
 
-![Public subnet created](./%20screenshots/01-public-subnet-created.png)
+![Public subnet created](../%20screenshots/01-public-subnet-created.png)
 
 ---
 
@@ -179,9 +179,9 @@ This ensured that the subnet used the intended routing configuration.
 
 ### Evidence
 
-[View route-table association](./%20screenshots/02-route-table-subnet-association.png)
+[View route-table association](../%20screenshots/02-route-table-subnet-association.png)
 
-![Route-table and subnet association](./%20screenshots/02-route-table-subnet-association.png)
+![Route-table and subnet association](../%20screenshots/02-route-table-subnet-association.png)
 
 ---
 
@@ -197,9 +197,9 @@ This route provided the public subnet with an internet path.
 
 ### Evidence
 
-[View Internet Gateway route](./%20screenshots/03-public-route-to-internet-gateway.png)
+[View Internet Gateway route](../%20screenshots/03-public-route-to-internet-gateway.png)
 
-![Public route to Internet Gateway](./%20screenshots/03-public-route-to-internet-gateway.png)
+![Public route to Internet Gateway](../%20screenshots/03-public-route-to-internet-gateway.png)
 
 ---
 
@@ -211,9 +211,9 @@ The Flow Log configuration captured supported traffic metadata and sent the outp
 
 ### Evidence
 
-[View VPC Flow Logs evidence](./%20screenshots/04-vpc-flow-logs-active.png)
+[View VPC Flow Logs evidence](../%20screenshots/04-vpc-flow-logs-active.png)
 
-![VPC Flow Logs active](./%20screenshots/04-vpc-flow-logs-active.png)
+![VPC Flow Logs active](../%20screenshots/04-vpc-flow-logs-active.png)
 
 ---
 
@@ -242,9 +242,9 @@ The EC2 instance was attached to the custom VPC, public subnet, and project secu
 
 ### Evidence
 
-[View EC2 instance evidence](./%20screenshots/05-ec2-instance-summary.png)
+[View EC2 instance evidence](../%20screenshots/05-ec2-instance-summary.png)
 
-![EC2 instance summary](./%20screenshots/05-ec2-instance-summary.png)
+![EC2 instance summary](../%20screenshots/05-ec2-instance-summary.png)
 
 ---
 
@@ -268,9 +268,9 @@ The public evidence was sanitized to remove:
 
 ### Evidence
 
-[View SSH access evidence](./%20screenshots/06-ssh-access-success.png)
+[View SSH access evidence](../%20screenshots/06-ssh-access-success.png)
 
-![SSH access successful](./%20screenshots/06-ssh-access-success.png)
+![SSH access successful](../%20screenshots/06-ssh-access-success.png)
 
 ## Server Preparation
 
@@ -328,9 +328,9 @@ The default Nginx content was replaced by the customized VinceOps website files.
 
 ### Evidence
 
-[View Nginx validation evidence](./%20screenshots/07-nginx-active-http-response.png)
+[View Nginx validation evidence](../%20screenshots/07-nginx-active-http-response.png)
 
-![Nginx active and responding](./%20screenshots/07-nginx-active-http-response.png)
+![Nginx active and responding](../%20screenshots/07-nginx-active-http-response.png)
 
 ---
 
@@ -404,9 +404,9 @@ DNS propagation was checked across multiple global DNS resolvers before completi
 
 ### Evidence
 
-[View DNS propagation evidence](./%20screenshots/08-dns-propagation-vinceops-site.png)
+[View DNS propagation evidence](../%20screenshots/08-dns-propagation-vinceops-site.png)
 
-![DNS propagation for vinceops.site](./%20screenshots/08-dns-propagation-vinceops-site.png)
+![DNS propagation for vinceops.site](../%20screenshots/08-dns-propagation-vinceops-site.png)
 
 ## Architecture Consideration
 
@@ -443,9 +443,9 @@ sudo nginx -t
 
 ### Evidence
 
-[View Certbot installation evidence](./%20screenshots/9-certbot-installed.png)
+[View Certbot installation evidence](../%20screenshots/9-certbot-installed.png)
 
-![Certbot installed](./%20screenshots/9-certbot-installed.png)
+![Certbot installed](../%20screenshots/9-certbot-installed.png)
 
 ---
 
@@ -461,9 +461,9 @@ sudo certbot --nginx -d vinceops.site
 
 ### Evidence
 
-[View certificate-issuance evidence](./%20screenshots/10-certbot-certificate-issued.png)
+[View certificate-issuance evidence](../%20screenshots/10-certbot-certificate-issued.png)
 
-![Certificate issued for vinceops.site](./%20screenshots/10-certbot-certificate-issued.png)
+![Certificate issued for vinceops.site](../%20screenshots/10-certbot-certificate-issued.png)
 
 ---
 
@@ -486,9 +486,9 @@ This prevented certificate-name mismatch problems when the `www` hostname was us
 
 ### Evidence
 
-[View root-and-www certificate evidence](./%20screenshots/11-certificate-expanded-root-and-www.png)
+[View root-and-www certificate evidence](../%20screenshots/11-certificate-expanded-root-and-www.png)
 
-![Certificate expanded for root and www](./%20screenshots/11-certificate-expanded-root-and-www.png)
+![Certificate expanded for root and www](../%20screenshots/11-certificate-expanded-root-and-www.png)
 
 ---
 
@@ -498,9 +498,9 @@ Browser certificate inspection confirmed that a Let’s Encrypt certificate had 
 
 ### Evidence
 
-[View certificate details](./%20screenshots/12-https-certificate-detail.png)
+[View certificate details](../%20screenshots/12-https-certificate-detail.png)
 
-![HTTPS certificate details](./%20screenshots/12-https-certificate-detail.png)
+![HTTPS certificate details](../%20screenshots/12-https-certificate-detail.png)
 
 ---
 
@@ -527,9 +527,9 @@ The end-to-end path combined:
 
 ### Evidence
 
-[View deployed website evidence](./%20screenshots/13-vinceops-site-https-deployed.png)
+[View deployed website evidence](../%20screenshots/13-vinceops-site-https-deployed.png)
 
-![VinceOps website deployed through HTTPS](./%20screenshots/13-vinceops-site-https-deployed.png)
+![VinceOps website deployed through HTTPS](../%20screenshots/13-vinceops-site-https-deployed.png)
 
 ---
 
@@ -581,11 +581,11 @@ The initial scan observed:
 
 ### Evidence
 
-[View initial scan screenshot](./%20screenshots/14-port-scan-before-http-and-https.png)
+[View initial scan screenshot](../%20screenshots/14-port-scan-before-http-and-https.png)
 
-![Initial external scan](./%20screenshots/14-port-scan-before-http-and-https.png)
+![Initial external scan](../%20screenshots/14-port-scan-before-http-and-https.png)
 
-[View initial scan report](./%20screenshots/%20security-reports/port-scan-before-http-and-https.png)
+[View initial scan report](../%20screenshots/%20security-reports/port-scan-before-http-and-https.png)
 
 ---
 
@@ -597,7 +597,7 @@ After the public exposure was reviewed and adjusted, the follow-up scan observed
 |---:|---|---|
 | 443 | HTTPS | Open |
 
-[View follow-up scan report](./%20screenshots/%20security-reports/port-scan-after-https-only.png)
+[View follow-up scan report](../%20screenshots/%20security-reports/port-scan-after-https-only.png)
 
 ## Interpretation
 
@@ -612,7 +612,7 @@ The result does not prove that:
 
 Detailed notes are available in:
 
-[Security Testing Documentation](./security-testing.md)
+[Security Testing Documentation](../security-testing.md)
 
 ---
 
@@ -637,7 +637,7 @@ The implementation followed these key decisions:
 
 Detailed reasoning is documented in:
 
-[Architecture and Technical Decisions](./decisions.md)
+[Architecture and Technical Decisions](../decisions.md)
 
 ---
 
@@ -661,11 +661,11 @@ The repository therefore documents a completed point-in-time deployment rather t
 
 | Document | Purpose |
 |---|---|
-| [Month 2 Overview](./README.md) | Recruiter-facing project summary |
-| [Technical Decisions](./decisions.md) | Architecture decisions, trade-offs, and improvements |
-| [Security Testing](./security-testing.md) | Scan scope, findings, and remediation notes |
-| [Serverless Bonus](./serverless-bonus.md) | Additional serverless hosting exercise |
-| [Evidence Register](./%20screenshots/README.md) | Sanitized implementation evidence |
+| [Month 2 Overview](../README.md) | Recruiter-facing project summary |
+| [Technical Decisions](../decisions.md) | Architecture decisions, trade-offs, and improvements |
+| [Security Testing](../security-testing.md) | Scan scope, findings, and remediation notes |
+| [Serverless Bonus](../serverless-bonus.md) | Additional serverless hosting exercise |
+| [Evidence Register](../%20screenshots/README.md) | Sanitized implementation evidence |
 
 ---
 
@@ -690,9 +690,9 @@ The Month 2 implementation demonstrated:
 
 ## Navigation
 
-[Back to Month 2 Overview](./README.md) ·
-[Technical Decisions](./decisions.md) ·
-[Security Testing](./security-testing.md) ·
-[Serverless Bonus](./serverless-bonus.md) ·
-[Evidence](./%20screenshots/README.md)
+[Back to Month 2 Overview](../README.md) ·
+[Technical Decisions](../decisions.md) ·
+[Security Testing](../security-testing.md) ·
+[Serverless Bonus](../serverless-bonus.md) ·
+[Evidence](../%20screenshots/README.md)
 

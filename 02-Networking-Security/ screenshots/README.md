@@ -349,7 +349,7 @@ Relevant resource names, configuration states, domain names, port numbers, and s
 ### Navigation
 
 [Back to Month 2 Overview](../README.md) ·
-[Architecture Documentation](../network-web-architecture.md) ·
+[Architecture Documentation](../diagrams/network-web-architecture.png) ·
 [Security Testing](../security-testing.md) ·
 [Technical Decisions](../decisions.md) ·
 [Serverless Bonus](../serverless-bonus.md)
