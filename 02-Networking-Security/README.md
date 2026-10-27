@@ -1,4 +1,4 @@
-# Month 2: AWS Network and Secure Web Deployment
+# phase 2: AWS Network and Secure Web Deployment
 
 ![AWS](https://img.shields.io/badge/AWS-VPC%20%7C%20EC2-FF9900?logo=amazonaws&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/OS-Ubuntu-E95420?logo=ubuntu&logoColor=white)
