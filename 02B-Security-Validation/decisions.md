@@ -458,7 +458,7 @@ These decisions evolved VinceOps from the Month 2 single-instance model into a s
 
 ## Navigate VinceOps Month 2B
 
-[← Month 2B Overview](./README.md) ·
+[← Month 2B Overview](./README.MD) ·
 [Architecture](./architecture/) ·
 [Engineering Evidence](./evidence/README.md) ·
 [Troubleshooting](./troubleshooting.md)

@@ -17,6 +17,8 @@ The repository is organized as a series of hands-on engineering milestones. Each
 | **CI and source-control automation** | GitHub Actions workflows, validation, troubleshooting, container-build tests and recorded pipeline results |
 | **Application containerization** | React frontend, Spring Boot API and MongoDB packaged for a Docker/EC2 lab; image publishing to Amazon ECR |
 | **Kubernetes and GitOps** | K3s, Deployments, Services, ConfigMaps, Helm, Argo CD, GHCR promotion, HTTPS Ingress, NetworkPolicy, RBAC, PDB and operational validation |
+| **Infrastructure as code** | Terraform-managed VPC, four subnets, EC2, security groups, automated provisioning, idempotency, controlled updates and verified teardown |
+
 
 ## Explore the engineering milestones
 
@@ -28,7 +30,7 @@ The repository is organized as a series of hands-on engineering milestones. Each
 | **03** | **CI Foundations** | GitHub Actions workflow setup, repository checks, execution evidence and troubleshooting | [CI Foundations](./03-CI-CD-Pipeline/README.md) |
 | **04** | **Containerized Application Delivery** | Dockerized React, Spring Boot and MongoDB application, EC2 testing and ECR artifacts | [Containerization](./04-Containerization/README.md) |
 | **05** | **Kubernetes Platform Engineering** | Six connected projects, progressing from workload orchestration to GitOps, ingress and runtime security | [Kubernetes Engineering](./05-Kubernetes/README.md) |
-| **06** | **Terraform Infrastructure as Code** | AWS VPC, multi-AZ subnets, EC2, IAM, validation, updates and teardown | [Terraform IaC](./06-Infrastructure-as-Code/README.md) |
+| **06** | **Terraform Infrastructure as Code** | AWS VPC, multi-AZ subnets, security groups, EC2, idempotency, updates and teardown | [Terraform IaC](./06-Infrastructure-as-Code/README.md) |
 
 **Next milestone — Integrated VinceOps Capstone.** The capstone will be defined after the repository cleanup. It is intended to bring the platform disciplines together, including Terraform-based infrastructure automation and observability, rather than treating these as separate stand-alone project tracks. No capstone implementation is claimed here yet.
 
@@ -41,7 +43,8 @@ flowchart LR
   PRIVATE --> CI["03 · GitHub Actions<br/>CI foundations"]
   CI --> DOCKER["04 · Docker application<br/>and image delivery"]
   DOCKER --> K8S["05 · Kubernetes<br/>Helm · Argo CD · Security"]
-  K8S -. "Foundation for" .-> CAP["Integrated capstone<br/>scope to be defined"]
+  K8S --> IAC["06 · Terraform IaC<br/>AWS networking and EC2"]
+  IAC -. "Foundation for" .-> CAP["Integrated capstone<br/>scope to be defined"]
 ```
 
 This diagram shows the **learning and engineering progression** of the repository. Individual phases were often built and verified in separate AWS or Kubernetes lab environments; the diagram does not imply an existing persistent connection between all systems.
@@ -109,6 +112,12 @@ The frontend CI/CD demonstration reached **Argo CD Synced / Healthy** with two r
 
 **Explore:** [Kubernetes workstream overview](./05-Kubernetes/README.md) · [Kubernetes evidence and code](./05-Kubernetes/)
 
+## 06 — Managing AWS infrastructure through Terraform
+
+Phase 06 applied Terraform to a temporary AWS development-account lab. The configuration created a two-AZ VPC with public and private subnets, routed public access through an Internet Gateway, and provisioned an Ubuntu EC2 instance using restricted SSH access and automated Nginx bootstrap. Validation confirmed HTTP 200 responses, an idempotent plan, an in-place tag update, and the successful destruction of all 17 managed resources.
+
+**Explore:** [Terraform architecture and case study](./06-Infrastructure-as-Code/terraform-networking-lab/README.md) · [Validation reports](./06-Infrastructure-as-Code/terraform-networking-lab/docs/evidence/validation/) · [Twelve screenshots](./06-Infrastructure-as-Code/terraform-networking-lab/docs/evidence/screenshots/README.md)
+
 ## Security, reliability and engineering practices
 
 Security and operations are present throughout the portfolio—not isolated to the final Kubernetes project.
@@ -133,6 +142,7 @@ Start with any [project README](#explore-the-engineering-milestones), then follo
 | CI introduction | [Workflow success](./03-CI-CD-Pipeline/screenshots/workflow-success.png) |
 | Docker and application delivery | [Containerization evidence gallery](./04-Containerization/docs/screenshots/) |
 | Kubernetes delivery | [Projects 01–06](./05-Kubernetes/README.md) |
+| Terraform Infrastructure as Code | [Architecture, configuration and evidence](./06-Infrastructure-as-Code/terraform-networking-lab/README.md) |
 | GitHub Actions automation | [Repository workflows](./.github/workflows/) |
 
 Lab infrastructure was often terminated after testing. Historical screenshots therefore document **observed results at the time of validation**, not necessarily services that remain accessible now. The Project 06 NetworkPolicy result is documented with its test limitations; schema validity alone is not treated as proof of enforcement.

@@ -1,18 +1,12 @@
-# AWS Organizations and IAM Evidence
+# AWS Organizations and IAM — Evidence Index
 
-This directory contains selected, sanitized AWS console screenshots from the VinceOps Cloud multi-account and IAM Identity Center implementation.
+Screenshots from the VinceOps multi-account governance and IAM Identity Center lab. The original evidence files and their filenames are retained.
 
-## Evidence Included
-
-| Screenshot | Evidence |
+| Original screenshot | What it records |
 |---|---|
-| `01-aws-organization-account-structure.png` | Management, Development, Staging, and Production accounts within AWS Organizations. |
-| `03-iam-identity-center-groups.png` | Five role-based workforce groups created in IAM Identity Center. |
-| `04-permission-sets-overview.png` | Five permission-set baselines created and provisioned. |
-| `12-staging-account-assignments.png` | Role-specific Staging assignments for DevOps, Security Auditors, and ReadOnly access. |
+| [AWS Organizations account structure](./01-aws-organization-account-structure.png) | The account hierarchy captured during the lab |
+| [IAM Identity Center groups](./Iam-identity-center-groups.png) | Workforce groups in the Identity Center console |
+| [Permission-set configuration](./permission%20set%20correct.png) | Permission-set configuration shown in the AWS console |
+| [Staging access configuration](./Staging%20correct.png) | The staging account access configuration captured during implementation |
 
-## Security Notice
-
-AWS account IDs, email addresses, organization identifiers, IAM Identity Center identifiers, ARNs, and personal account details were removed before publication.
-
-These screenshots are selected implementation evidence and do not represent every AWS console page used during the build.
+These images are **historical implementation evidence**, not a live account-audit export. Refer to the [Phase 01 README](../README.md) and [IAM decisions](../decisions.md) for architecture and scope.

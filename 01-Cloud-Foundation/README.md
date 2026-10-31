@@ -258,7 +258,7 @@ The resulting architecture provides:
 
 ### Repository Navigation
 
-[⬆ Back to top](#month-1-aws-multi-account-and-iam-foundation) ·
+[⬆ Back to top](#phase-1-aws-multi-account-and-iam-foundation) ·
 [AWS Organization](./aws-orginasation/README.md) ·
 [IAM Policies](./iam-architecture/policies.md) ·
 [IAM Groups](./iam-architecture/users-and-groups.md) ·

@@ -928,7 +928,7 @@ The architecture decisions produced a documented deployment that demonstrated:
 | Document | Purpose |
 |---|---|
 | [Month 2 Overview](./README.md) | Main project summary |
-| [Network and Web Architecture](./network-web-architecture.md) | Detailed implementation architecture |
+| [Network and Web Architecture](./diagrams/README.md) | Detailed implementation architecture |
 | [Security Testing](./security-testing.md) | Scan scope, observations, and remediation |
 | [Serverless Bonus](./serverless-bonus.md) | Separate additional hosting exercise |
 | [Evidence Register](./%20screenshots/README.md) | Sanitized implementation screenshots |
@@ -938,7 +938,7 @@ The architecture decisions produced a documented deployment that demonstrated:
 ## Navigation
 
 [Back to Month 2 Overview](./README.md) ·
-[Architecture](./network-web-architecture.md) ·
+[Architecture](./diagrams/README.md) ·
 [Security Testing](./security-testing.md) ·
 [Serverless Bonus](./serverless-bonus.md) ·
 [Evidence](./%20screenshots/README.md)

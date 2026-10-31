@@ -327,7 +327,7 @@ Both approaches are useful, but they solve different operational requirements.
 | Document | Purpose |
 |---|---|
 | [Month 2 Overview](./README.md) | Main project summary |
-| [Network and Web Architecture](./network-web-architecture.md) | Primary EC2 deployment architecture |
+| [Network and Web Architecture](./diagrams/README.md) | Primary EC2 deployment architecture |
 | [Architecture Decisions](./decisions.md) | Technical decisions and trade-offs |
 | [Security Testing](./security-testing.md) | External exposure review |
 | [Evidence Register](./%20screenshots/README.md) | Sanitized primary-deployment evidence |
@@ -337,7 +337,7 @@ Both approaches are useful, but they solve different operational requirements.
 ## Navigation
 
 [Back to Month 2 Overview](./README.md) ·
-[Architecture](./network-web-architecture.md) ·
+[Architecture](./diagrams/README.md) ·
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·
 [Evidence](./%20screenshots/README.md)

@@ -667,7 +667,7 @@ The testing added an external validation layer to the AWS deployment and demonst
 | Document | Purpose |
 |---|---|
 | [Month 2 Overview](./README.md) | Main recruiter-facing project summary |
-| [Network and Web Architecture](./network-web-architecture.md) | Detailed deployment architecture |
+| [Network and Web Architecture](./diagrams/README.md) | Detailed deployment architecture |
 | [Architecture Decisions](./decisions.md) | Decisions, trade-offs, and limitations |
 | [Serverless Bonus](./serverless-bonus.md) | Separate additional hosting exercise |
 | [Evidence Register](./%20screenshots/README.md) | Sanitized implementation screenshots |
@@ -677,7 +677,7 @@ The testing added an external validation layer to the AWS deployment and demonst
 ## Navigation
 
 [Back to Month 2 Overview](./README.md) ·
-[Architecture](./network-web-architecture.md) ·
+[Architecture](./diagrams/README.md) ·
 [Decisions](./decisions.md) ·
 [Serverless Bonus](./serverless-bonus.md) ·
 [Evidence](./%20screenshots/README.md)

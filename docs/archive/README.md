@@ -1,10 +1,7 @@
-# Historical planning notes — VinceOps
+# Historical planning records — VinceOps
 
-The documents in `legacy-planning/` are preserved historical drafts from earlier
-portfolio planning. They are **not implementation evidence** and do not represent
-completed standalone Terraform or observability milestones.
+The files in [`legacy-planning/`](./legacy-planning/) are retained drafts from earlier project planning. They are **not implementation evidence** and should not be interpreted as proof that those initial plans were executed unchanged.
 
-The active project portfolio is documented in the [main README](../../README.md),
-covering AWS Cloud Foundation through Kubernetes Projects 01–06.
+The current portfolio is documented in the [main VinceOps README](../../README.md), including completed AWS, CI/CD, containerization, Kubernetes and [Terraform Infrastructure as Code](../../06-Infrastructure-as-Code/README.md) milestones.
 
-An integrated capstone will be scoped separately when the project brief is available.
+The integrated capstone remains a separate project scope; no completed capstone deployment is claimed here.

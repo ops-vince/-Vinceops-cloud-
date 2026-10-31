@@ -53,4 +53,4 @@ The evidence is separated by infrastructure layer so reviewers can validate desi
 
 The evidence demonstrates practical configuration and testing of multi-AZ networking, security boundaries, health checks, shared storage and alert delivery. It does not establish uninterrupted production operation, disaster-recovery guarantees or an independently measured availability service-level objective.
 
-Terraform, deployment automation and comprehensive platform observability will be addressed in the single **integrated VinceOps capstone** rather than being represented as separate completed milestones.
+**Project progression:** The standalone Terraform networking and EC2 lab was completed in [Phase 06](../06-Infrastructure-as-Code/README.md). Integrated EKS infrastructure automation and broader observability remain future capstone work.

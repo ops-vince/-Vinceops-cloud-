@@ -66,10 +66,6 @@ instance successfully.
   while security groups control allowed instance traffic.
 - Infrastructure must be verified after provisioning.
 
-## Next Steps
+## Completed lifecycle
 
-- Verify Terraform idempotency
-- Demonstrate a controlled infrastructure update
-- Capture final evidence
-- Destroy temporary AWS resources
-- Finalize project README
+After the EC2 and HTTP checks, Terraform reported no changes, applied a controlled tag update without replacement, and destroyed all 17 managed resources. The associated records are [idempotency](./03-terraform-idempotency.md), [lifecycle update](./04-terraform-lifecycle.md), and [cleanup](./05-resource-cleanup.md).
