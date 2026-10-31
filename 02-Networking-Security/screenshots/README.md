@@ -229,7 +229,7 @@ The initial scan observed:
 
 ![Initial external port scan](./14-port-scan-before-http-and-https.png)
 
-[View the initial scan report](./%20security-reports/port-scan-before-http-and-https.png)
+[View the initial scan report](./security-reports/port-scan-before-http-and-https.png)
 
 ---
 
@@ -241,9 +241,9 @@ After reviewing and reducing the publicly exposed services, a follow-up light sc
 |---:|---|---|
 | 443 | HTTPS | Open |
 
-[View the follow-up scan report](./%20security-reports/port-scan-after-https-only.png)
+[View the follow-up scan report](./security-reports/port-scan-after-https-only.png)
 
-![Follow-up HTTPS-only scan](./%20security-reports/port-scan-after-https-only.png)
+![Follow-up HTTPS-only scan](./security-reports/port-scan-after-https-only.png)
 
 ### Security Interpretation
 

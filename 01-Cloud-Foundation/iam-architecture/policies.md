@@ -47,7 +47,7 @@ Service-specific and resource-specific permissions will be introduced only when 
 See the selected sanitized AWS console evidence:
 
 - [Permission-set evidence](../screenshots/permission%20set%20correct.png)
-- [Screenshot evidence guide](../screenshots/Read.md)
+- [Screenshot evidence guide](../screenshots/README.md)
 
 ## Scope Boundary
 

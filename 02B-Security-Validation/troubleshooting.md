@@ -525,7 +525,7 @@ That distinction will carry forward into subsequent VinceOps infrastructure work
 
 ## Related Documentation
 
-[← Month 2B Overview](./README.MD) ·
+[← Month 2B Overview](./README.md) ·
 [Engineering Decisions](./decisions.md) ·
 [Engineering Evidence](./evidence/README.md) ·
 [Architecture](./architecture/)

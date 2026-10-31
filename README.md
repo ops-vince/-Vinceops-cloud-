@@ -2,7 +2,7 @@
 
 **An evidence-led cloud engineering portfolio built around a simulated fintech organization.**
 
-VinceOps documents the progressive design, deployment, security and operation of AWS infrastructure and cloud-native applications. The work begins with **multi-account governance and workforce identity**, moves through **secure networking and resilient application hosting**, and develops into **continuous integration, containerization, Kubernetes and GitOps delivery**.
+VinceOps documents the progressive design, deployment, security and operation of AWS infrastructure and cloud-native applications. The work begins with **multi-account governance and workforce identity**, moves through **secure networking and resilient application hosting**, and develops into **continuous integration, containerization, Kubernetes, GitOps and Terraform infrastructure automation**.
 
 The repository is organized as a series of hands-on engineering milestones. Each phase contains its own documentation, configurations, architecture decisions, troubleshooting records and implementation evidence. **These are verified lab implementations and project demonstrations—not a claim that every component operates together today as one continuously running production system.**
 
@@ -26,7 +26,7 @@ The repository is organized as a series of hands-on engineering milestones. Each
 |---|---|---|---|
 | **01** | **AWS Cloud Foundation & Identity** | Account boundaries, IAM Identity Center, role/group-based access and governance decisions | [Cloud Foundation](./01-Cloud-Foundation/README.md) |
 | **02** | **AWS Networking & Secure Web Delivery** | Public VPC networking, EC2/Nginx hosting, DNS, Let's Encrypt HTTPS, flow logging and security testing | [Networking & Security](./02-Networking-Security/README.md) |
-| **02B** | **Private Infrastructure & Security Validation** | Multi-AZ segmentation, NAT, private compute, ALB, EFS, scaling patterns, monitoring and incident evidence | [Infrastructure Validation](./02B-Security-Validation/README.MD) |
+| **02B** | **Private Infrastructure & Security Validation** | Multi-AZ segmentation, NAT, private compute, ALB, EFS, scaling patterns, monitoring and incident evidence | [Infrastructure Validation](./02B-Security-Validation/README.md) |
 | **03** | **CI Foundations** | GitHub Actions workflow setup, repository checks, execution evidence and troubleshooting | [CI Foundations](./03-CI-CD-Pipeline/README.md) |
 | **04** | **Containerized Application Delivery** | Dockerized React, Spring Boot and MongoDB application, EC2 testing and ECR artifacts | [Containerization](./04-Containerization/README.md) |
 | **05** | **Kubernetes Platform Engineering** | Six connected projects, progressing from workload orchestration to GitOps, ingress and runtime security | [Kubernetes Engineering](./05-Kubernetes/README.md) |
@@ -59,7 +59,7 @@ The platform started by defining **where workloads belong and who can access eac
 - Restricted Development, Staging and governance access by role; the documented model grants **no direct standing IAM Identity Center assignment to Production**.
 - Recorded decisions concerning account separation, access boundaries and conservative permission baselines.
 
-**Explore:** [Cloud Foundation README](./01-Cloud-Foundation/README.md) · [IAM architecture and decisions](./01-Cloud-Foundation/decisions.md) · [AWS account evidence](./01-Cloud-Foundation/screenshots/Read.md)
+**Explore:** [Cloud Foundation README](./01-Cloud-Foundation/README.md) · [IAM architecture and decisions](./01-Cloud-Foundation/decisions.md) · [AWS account evidence](./01-Cloud-Foundation/screenshots/README.md)
 
 ## 02 — Building and securing internet-facing infrastructure
 
@@ -85,7 +85,7 @@ The infrastructure was then extended beyond a single publicly exposed EC2 host i
 - Tested HTTPS listener behavior and captured operational troubleshooting evidence.
 - Documented **Datadog monitoring and Slack notifications**, including threshold and recovery evidence.
 
-**Explore:** [Phase 02B README](./02B-Security-Validation/README.MD) · [Architecture](./02B-Security-Validation/architecture/vinceops-month-2b-architecture.png) · [Evidence by engineering layer](./02B-Security-Validation/evidence/README.md)
+**Explore:** [Phase 02B README](./02B-Security-Validation/README.md) · [Architecture](./02B-Security-Validation/architecture/vinceops-month-2b-architecture.png) · [Evidence by engineering layer](./02B-Security-Validation/evidence/README.md)
 
 ## 03–04 — Moving from infrastructure to application delivery
 
@@ -131,12 +131,13 @@ Security and operations are present throughout the portfolio—not isolated to t
 - **Verification:** Architecture records, configuration files, workflow runs, terminal results, screenshots and documented limitations.
 
 ## How to review the evidence
+[Engineering review guide](./docs/engineering-catalog.md) — architecture, implementation, evidence and scope across all six phases.
 
 Start with any [project README](#explore-the-engineering-milestones), then follow its links to architecture diagrams, source configuration, verification records and screenshots. For a cross-section of the evidence:
 
 | Area | Direct evidence |
 |---|---|
-| AWS organization and IAM | [Account and identity screenshots](./01-Cloud-Foundation/screenshots/Read.md) |
+| AWS organization and IAM | [Account and identity screenshots](./01-Cloud-Foundation/screenshots/README.md) |
 | Network deployment and HTTPS | [Phase 02 README and validation](./02-Networking-Security/README.md) |
 | Private AWS architecture and monitoring | [Phase 02B evidence register](./02B-Security-Validation/evidence/README.md) |
 | CI introduction | [Workflow success](./03-CI-CD-Pipeline/screenshots/workflow-success.png) |

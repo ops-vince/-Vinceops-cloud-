@@ -1,10 +1,5 @@
-# Phase 2: AWS Network and Secure Web Deployment
+# Phase 02 — AWS Network and Secure Web Deployment
 
-![AWS](https://img.shields.io/badge/AWS-VPC%20%7C%20EC2-FF9900?logo=amazonaws&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/OS-Ubuntu-E95420?logo=ubuntu&logoColor=white)
-![Nginx](https://img.shields.io/badge/Web%20Server-Nginx-009639?logo=nginx&logoColor=white)
-![HTTPS](https://img.shields.io/badge/Security-HTTPS-2EA44F)
-![Status](https://img.shields.io/badge/Status-Completed-2EA44F)
 
 > A secure AWS web deployment built from a custom VPC through EC2, Nginx, DNS, HTTPS, network logging and external security validation.
 
@@ -131,10 +126,10 @@ The public route table included:
 
 ### Network Evidence
 
-- [Public subnet created](./%20screenshots/01-public-subnet-created.png)
-- [Route-table and subnet association](./%20screenshots/02-route-table-subnet-association.png)
-- [Internet Gateway route](./%20screenshots/03-public-route-to-internet-gateway.png)
-- [VPC Flow Logs active](./%20screenshots/04-vpc-flow-logs-active.png)
+- [Public subnet created](./screenshots/01-public-subnet-created.png)
+- [Route-table and subnet association](./screenshots/02-route-table-subnet-association.png)
+- [Internet Gateway route](./screenshots/03-public-route-to-internet-gateway.png)
+- [VPC Flow Logs active](./screenshots/04-vpc-flow-logs-active.png)
 
 ---
 
@@ -152,7 +147,7 @@ Access method: SSH key pair
 Metadata protection: IMDSv2
 ```
 
-[View the EC2 instance evidence](./%20screenshots/05-ec2-instance-summary.png)
+[View the EC2 instance evidence](./screenshots/05-ec2-instance-summary.png)
 
 ---
 
@@ -167,7 +162,7 @@ sudo apt update -y
 sudo apt upgrade -y
 ```
 
-[View the SSH access evidence](./%20screenshots/06-ssh-access-success.png)
+[View the SSH access evidence](./screenshots/06-ssh-access-success.png)
 
 ---
 
@@ -194,7 +189,7 @@ The customized VinceOps website files were deployed to:
 /var/www/html
 ```
 
-[View the Nginx validation evidence](./%20screenshots/07-nginx-active-http-response.png)
+[View the Nginx validation evidence](./screenshots/07-nginx-active-http-response.png)
 
 ---
 
@@ -208,7 +203,7 @@ vinceops.site
 
 DNS propagation was checked across multiple public DNS resolvers before completing the HTTPS configuration.
 
-[View the DNS propagation evidence](./%20screenshots/08-dns-propagation-vinceops-site.png)
+[View the DNS propagation evidence](./screenshots/08-dns-propagation-vinceops-site.png)
 
 ---
 
@@ -236,11 +231,11 @@ sudo certbot --nginx -d vinceops.site -d www.vinceops.site
 
 ### HTTPS Evidence
 
-- [Certbot installation](./%20screenshots/9-certbot-installed.png)
-- [Certificate issued](./%20screenshots/10-certbot-certificate-issued.png)
-- [Root and `www` certificate coverage](./%20screenshots/11-certificate-expanded-root-and-www.png)
-- [Certificate details](./%20screenshots/12-https-certificate-detail.png)
-- [HTTPS website deployment](./%20screenshots/13-vinceops-site-https-deployed.png)
+- [Certbot installation](./screenshots/9-certbot-installed.png)
+- [Certificate issued](./screenshots/10-certbot-certificate-issued.png)
+- [Root and `www` certificate coverage](./screenshots/11-certificate-expanded-root-and-www.png)
+- [Certificate details](./screenshots/12-https-certificate-detail.png)
+- [HTTPS website deployment](./screenshots/13-vinceops-site-https-deployed.png)
 
 ---
 
@@ -250,7 +245,7 @@ VPC Flow Logs were enabled to capture network traffic metadata.
 
 The Flow Logs were configured with an Amazon S3 destination for storage and review.
 
-[View the VPC Flow Log evidence](./%20screenshots/04-vpc-flow-logs-active.png)
+[View the VPC Flow Log evidence](./screenshots/04-vpc-flow-logs-active.png)
 
 ---
 
@@ -265,8 +260,8 @@ An authorised external port scan was performed against the VinceOps domain.
 | 80 | HTTP | Open |
 | 443 | HTTPS | Open |
 
-- [View the initial scan screenshot](./%20screenshots/14-port-scan-before-http-and-https.png)
-- [View the initial scan report](./%20screenshots/%20security-reports/port-scan-before-http-and-https.png)
+- [View the initial scan screenshot](./screenshots/14-port-scan-before-http-and-https.png)
+- [View the initial scan report](./screenshots/security-reports/port-scan-before-http-and-https.png)
 
 ### Follow-Up Scan
 
@@ -274,7 +269,7 @@ An authorised external port scan was performed against the VinceOps domain.
 |---:|---|---|
 | 443 | HTTPS | Open |
 
-[View the follow-up scan report](./%20screenshots/%20security-reports/port-scan-after-https-only.png)
+[View the follow-up scan report](./screenshots/security-reports/port-scan-after-https-only.png)
 
 The follow-up scan confirmed that the publicly observed web exposure had been reduced to HTTPS.
 
@@ -284,7 +279,7 @@ The follow-up scan confirmed that the publicly observed web exposure had been re
 
 The screenshot evidence register contains the complete sanitized implementation sequence.
 
-[View the Month 2 Screenshot Evidence Register](./%20screenshots/README.md)
+[View the Month 2 Screenshot Evidence Register](./screenshots/README.md)
 
 The evidence includes:
 
@@ -311,7 +306,7 @@ The evidence includes:
 | [Architecture Decisions](./decisions.md) | Design decisions and technical reasoning |
 | [Security Testing](./security-testing.md) | External scan and validation process |
 | [Serverless Hosting Bonus](./serverless-bonus.md) | Additional hosting exercise |
-| [Screenshot Evidence](./%20screenshots/README.md) | Sanitized implementation evidence |
+| [Screenshot Evidence](./screenshots/README.md) | Sanitized implementation evidence |
 
 ---
 
@@ -365,4 +360,4 @@ Security Validation
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·
 [Serverless Bonus](./serverless-bonus.md) ·
-[Evidence](./%20screenshots/README.md)
+[Evidence](./screenshots/README.md)

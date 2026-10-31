@@ -52,7 +52,7 @@ This statement applies only to direct IAM Identity Center assignments. It does n
 
 - [IAM Identity Center groups](../screenshots/Iam-identity-center-groups.png)
 - [Staging assignments](../screenshots/Staging%20correct.png)
-- [Screenshot evidence guide](../screenshots/Read.md)
+- [Screenshot evidence guide](../screenshots/README.md)
 
 ## Scope Boundary
 

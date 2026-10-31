@@ -149,11 +149,11 @@ The HTTP service was reviewed because the completed deployment objective was to 
 
 ## Evidence
 
-[View the initial scan screenshot](./%20screenshots/14-port-scan-before-http-and-https.png)
+[View the initial scan screenshot](./screenshots/14-port-scan-before-http-and-https.png)
 
-![Initial scan showing HTTP and HTTPS](./%20screenshots/14-port-scan-before-http-and-https.png)
+![Initial scan showing HTTP and HTTPS](./screenshots/14-port-scan-before-http-and-https.png)
 
-[View the initial detailed scan report](./%20screenshots/%20security-reports/port-scan-before-http-and-https.png)
+[View the initial detailed scan report](./screenshots/security-reports/port-scan-before-http-and-https.png)
 
 ---
 
@@ -241,9 +241,9 @@ This demonstrated a review-and-validation process rather than stopping after the
 
 ## Evidence
 
-[View the follow-up scan report](./%20screenshots/%20security-reports/port-scan-after-https-only.png)
+[View the follow-up scan report](./screenshots/security-reports/port-scan-after-https-only.png)
 
-![Follow-up scan showing HTTPS](./%20screenshots/%20security-reports/port-scan-after-https-only.png)
+![Follow-up scan showing HTTPS](./screenshots/security-reports/port-scan-after-https-only.png)
 
 ---
 
@@ -326,11 +326,11 @@ The following areas were reviewed:
 
 ## Supporting Evidence
 
-- [Certbot installation](./%20screenshots/9-certbot-installed.png)
-- [Initial certificate issuance](./%20screenshots/10-certbot-certificate-issued.png)
-- [Root and www certificate coverage](./%20screenshots/11-certificate-expanded-root-and-www.png)
-- [Browser certificate details](./%20screenshots/12-https-certificate-detail.png)
-- [HTTPS website deployment](./%20screenshots/13-vinceops-site-https-deployed.png)
+- [Certbot installation](./screenshots/9-certbot-installed.png)
+- [Initial certificate issuance](./screenshots/10-certbot-certificate-issued.png)
+- [Root and www certificate coverage](./screenshots/11-certificate-expanded-root-and-www.png)
+- [Browser certificate details](./screenshots/12-https-certificate-detail.png)
+- [HTTPS website deployment](./screenshots/13-vinceops-site-https-deployed.png)
 
 ---
 
@@ -651,14 +651,14 @@ The testing added an external validation layer to the AWS deployment and demonst
 
 | Evidence | Link |
 |---|---|
-| Initial scan screenshot | [View evidence](./%20screenshots/14-port-scan-before-http-and-https.png) |
-| Initial detailed report | [View report](./%20screenshots/%20security-reports/port-scan-before-http-and-https.png) |
-| Follow-up report | [View report](./%20screenshots/%20security-reports/port-scan-after-https-only.png) |
-| HTTPS certificate issuance | [View evidence](./%20screenshots/10-certbot-certificate-issued.png) |
-| Root and `www` coverage | [View evidence](./%20screenshots/11-certificate-expanded-root-and-www.png) |
-| Certificate details | [View evidence](./%20screenshots/12-https-certificate-detail.png) |
-| HTTPS deployment | [View evidence](./%20screenshots/13-vinceops-site-https-deployed.png) |
-| Complete evidence register | [View evidence register](./%20screenshots/README.md) |
+| Initial scan screenshot | [View evidence](./screenshots/14-port-scan-before-http-and-https.png) |
+| Initial detailed report | [View report](./screenshots/security-reports/port-scan-before-http-and-https.png) |
+| Follow-up report | [View report](./screenshots/security-reports/port-scan-after-https-only.png) |
+| HTTPS certificate issuance | [View evidence](./screenshots/10-certbot-certificate-issued.png) |
+| Root and `www` coverage | [View evidence](./screenshots/11-certificate-expanded-root-and-www.png) |
+| Certificate details | [View evidence](./screenshots/12-https-certificate-detail.png) |
+| HTTPS deployment | [View evidence](./screenshots/13-vinceops-site-https-deployed.png) |
+| Complete evidence register | [View evidence register](./screenshots/README.md) |
 
 ---
 
@@ -670,7 +670,7 @@ The testing added an external validation layer to the AWS deployment and demonst
 | [Network and Web Architecture](./diagrams/README.md) | Detailed deployment architecture |
 | [Architecture Decisions](./decisions.md) | Decisions, trade-offs, and limitations |
 | [Serverless Bonus](./serverless-bonus.md) | Separate additional hosting exercise |
-| [Evidence Register](./%20screenshots/README.md) | Sanitized implementation screenshots |
+| [Evidence Register](./screenshots/README.md) | Sanitized implementation screenshots |
 
 ---
 
@@ -680,4 +680,4 @@ The testing added an external validation layer to the AWS deployment and demonst
 [Architecture](./diagrams/README.md) ·
 [Decisions](./decisions.md) ·
 [Serverless Bonus](./serverless-bonus.md) ·
-[Evidence](./%20screenshots/README.md)
+[Evidence](./screenshots/README.md)

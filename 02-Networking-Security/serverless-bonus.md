@@ -330,7 +330,7 @@ Both approaches are useful, but they solve different operational requirements.
 | [Network and Web Architecture](./diagrams/README.md) | Primary EC2 deployment architecture |
 | [Architecture Decisions](./decisions.md) | Technical decisions and trade-offs |
 | [Security Testing](./security-testing.md) | External exposure review |
-| [Evidence Register](./%20screenshots/README.md) | Sanitized primary-deployment evidence |
+| [Evidence Register](./screenshots/README.md) | Sanitized primary-deployment evidence |
 
 ---
 
@@ -340,4 +340,4 @@ Both approaches are useful, but they solve different operational requirements.
 [Architecture](./diagrams/README.md) ·
 [Decisions](./decisions.md) ·
 [Security Testing](./security-testing.md) ·
-[Evidence](./%20screenshots/README.md)
+[Evidence](./screenshots/README.md)

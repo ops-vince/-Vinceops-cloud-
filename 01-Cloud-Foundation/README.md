@@ -1,9 +1,5 @@
-# Phase 1: AWS Multi-Account and IAM Foundation
+# Phase 01 — AWS Multi-Account and IAM Foundation
 
-![AWS](https://img.shields.io/badge/AWS-Organizations-FF9900?logo=amazonaws&logoColor=white)
-![IAM](https://img.shields.io/badge/IAM-Identity%20Center-DD344C?logo=amazonaws&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Implemented-2EA44F)
-![Documentation](https://img.shields.io/badge/Documentation-Complete-0969DA)
 
 > **Built in Amazon Web Services. Documented in GitHub.**
 
@@ -47,11 +43,11 @@ The objective was to establish separate AWS account boundaries and a centralized
 
 | Documentation | Description |
 |---|---|
-| [AWS Organization Documentation](./aws-orginasation/README.md) | Multi-account structure, account purposes, and environment separation |
+| [AWS Organization Documentation](./aws-organization/README.md) | Multi-account structure, account purposes, and environment separation |
 | [IAM Policies and Permission Sets](./iam-architecture/policies.md) | Permission-set design, access scope, and policy rationale |
 | [IAM Users and Groups](./iam-architecture/users-and-groups.md) | Workforce roles, responsibilities, and account assignments |
 | [Architecture and Security Decisions](./decisions.md) | Technical decisions, trade-offs, consequences, and review triggers |
-| [Sanitized AWS Console Evidence](./screenshots/Read.md) | Selected AWS console evidence supporting the implementation |
+| [Sanitized AWS Console Evidence](./screenshots/README.md) | Selected AWS console evidence supporting the implementation |
 | [Full Architecture Diagram](./iam-architecture/Diagram/AWS-Organisation%20account.png) | Visual overview of the implemented AWS Organizations and IAM architecture |
 
 ## Architecture Diagram
@@ -218,7 +214,7 @@ The repository contains selected, sanitized AWS console screenshots demonstratin
 - the five provisioned permission sets;
 - the implemented role-specific Staging assignments.
 
-[Review the sanitized AWS evidence](./screenshots/Read.md)
+[Review the sanitized AWS evidence](./screenshots/README.md)
 
 Sensitive identifiers were removed before publication, including:
 
@@ -259,9 +255,9 @@ The resulting architecture provides:
 ### Repository Navigation
 
 [⬆ Back to top](#phase-1-aws-multi-account-and-iam-foundation) ·
-[AWS Organization](./aws-orginasation/README.md) ·
+[AWS Organization](./aws-organization/README.md) ·
 [IAM Policies](./iam-architecture/policies.md) ·
 [IAM Groups](./iam-architecture/users-and-groups.md) ·
 [Architecture Diagram](./iam-architecture/Diagram/AWS-Organisation%20account.png) ·
 [Decisions](./decisions.md) ·
-[Evidence](./screenshots/Read.md)
+[Evidence](./screenshots/README.md)
