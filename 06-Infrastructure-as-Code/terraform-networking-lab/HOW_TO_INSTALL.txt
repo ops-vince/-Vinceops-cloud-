@@ -1,0 +1,1 @@
+Extract this ZIP into the existing VinceOps terraform-networking-lab directory. The ZIP already contains the docs/evidence/screenshots/ hierarchy. No existing Terraform configuration or README at lab root is modified. Review and then stage only docs/evidence/screenshots/.
