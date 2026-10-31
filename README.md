@@ -28,6 +28,7 @@ The repository is organized as a series of hands-on engineering milestones. Each
 | **03** | **CI Foundations** | GitHub Actions workflow setup, repository checks, execution evidence and troubleshooting | [CI Foundations](./03-CI-CD-Pipeline/README.md) |
 | **04** | **Containerized Application Delivery** | Dockerized React, Spring Boot and MongoDB application, EC2 testing and ECR artifacts | [Containerization](./04-Containerization/README.md) |
 | **05** | **Kubernetes Platform Engineering** | Six connected projects, progressing from workload orchestration to GitOps, ingress and runtime security | [Kubernetes Engineering](./05-Kubernetes/README.md) |
+| **06** | **Terraform Infrastructure as Code** | AWS VPC, multi-AZ subnets, EC2, IAM, validation, updates and teardown | [Terraform IaC](./06-Infrastructure-as-Code/README.md) |
 
 **Next milestone — Integrated VinceOps Capstone.** The capstone will be defined after the repository cleanup. It is intended to bring the platform disciplines together, including Terraform-based infrastructure automation and observability, rather than treating these as separate stand-alone project tracks. No capstone implementation is claimed here yet.
 
